@@ -1,0 +1,450 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+HttpPostRequestLib4
+</name>
+</assembly>
+<members>
+<member name="F:HttpPostRequestLib.Net.MimeTypes.Application.JavaArchive">
+	<summary>
+ Archive and compressed java (*.jar)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.PowerPoint">
+	<summary>
+ Microsoft Powerpoint (*.pot, *.pps, *.ppt, *.ppz)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Word">
+	<summary>
+ Microsoft Word (*.doc)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Binary">
+	<summary>
+ Binaries (*.bin, *.class, *.dms, *.exe, *.lha, *.lzh)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Pdf">
+	<summary>
+ Portable Document Format (*.pdf)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.PostScript">
+	<summary>
+ Post script (*.ai, *.eps, *.ps)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.RichTextFormat">
+	<summary>
+ Rich Text Format document (*.rtf)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.GTar">
+	<summary>
+ Archive and compressed tar (*.gtar)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.GZip">
+	<summary>
+ GZIP compressed archive file (*.gz, *.gzip)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.JavaScript">
+	<summary>
+ JavaScript file (*.js)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Latex">
+	<summary>
+ Latex text document file (*.latex)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.MsDosProgramm">
+	<summary>
+ MS-DOS document file (*.bat, *.com, *.exe)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Perl">
+	<summary>
+ Perl script language source code file (*.pl, *.pm)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Rar">
+	<summary>
+ WinRAR compressed archive (*.rar)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Flash">
+	<summary>
+ ShockWave Flash file (*.swf)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.TarGZip">
+	<summary>
+ Old version Gzip compressed TAR Archive (*.tar.gz, *.tar.gz)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Tar">
+	<summary>
+ Unix standard Archive format (*.tar)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Source">
+	<summary>
+ Source resource string file (*.src)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Application.Zip">
+	<summary>
+ WinZIP Compressed ZIP archive file (*.zip)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Audio.Basic">
+	<summary>
+ Unix audio sound file format (*.au, *.snd)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Audio.Midi">
+	<summary>
+ MIDI-sequention sound (*.mid, *.midi, *.kar)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Audio.Mpeg">
+	<summary>
+ MPEG Sound file (*.mp2, *.mp3, *.mpga)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Audio.Aiff">
+	<summary>
+ Audio Interchange File Format (*.aif, *.aifc, *.aiff)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Audio.MpegUrl">
+	<summary>
+ MP3 songs playlist file (*.m3u)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Audio.Wma">
+	<summary>
+ Windows Media Audio (*.wma)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Audio.RealAudio">
+	<summary>
+ RealMedia audio file (*.ram, *.rm)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Audio.Wav">
+	<summary>
+ WAVe PCM sound file (*.wav)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Image.Gif">
+	<summary>
+ Graphics interchange file format (*.gif)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Image.Jpeg">
+	<summary>
+ JPEG bitmap image file format (*jpe, *.jpeg, *.jpg)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Image.Png">
+	<summary>
+ Portable Network Graphic (*.png)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Image.Tiff">
+	<summary>
+ Aldus Tagged Image File Format (*.tif, *.tiff)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Model.Iges">
+	<summary>
+ International Graphics Exchange Standard file format (*igs, *.iges)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Model.Mesh">
+	<summary>
+ 3D Graphic file (*.msh, *.mesh, *.,silo)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Model.Vrm">
+	<summary>
+ Virtual Reality Modeling (*.vrml, *.wrl)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Text.Css">
+	<summary>
+ Cascading Style Sheets file (*.css)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Text.Html">
+	<summary>
+ HTML Hypertext Markup Language web page file (*.htm, *.html)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Text.Plain">
+	<summary>
+ Unformated plain text (*.txt, *.c, *.cc, *.h, *.hh, *.asc)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Text.RichTextFormat">
+	<summary>
+ Rich Text Format document (*.rtf)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Text.Xml">
+	<summary>
+ XML document file (*.xml)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Avi">
+	<summary>
+ Audio Video Interleave file (*.avi)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Flv">
+	<summary>
+ Flash video file (*.flv)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Mpeg">
+	<summary>
+ MPEG Video file (*.mp2, *.mpe, *.mpeg, *.mpg)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Mpeg4">
+	<summary>
+ MPEG4 Video file (*.mp4)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Quicktime">
+	<summary>
+ Apple QuickTime movie clip (*.qt, *.mov)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Asf">
+	<summary>
+ Microsoft Advanced Systems (streaming) format (*.asf)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Asx">
+	<summary>
+ Microsoft Advanced Streaming Redirector file (*.asx)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Wmv">
+	<summary>
+ Windows Media Video file (*.wmv)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Wmx">
+	<summary>
+ Windows Media Redirector (*.wmx)
+ </summary>
+</member><member name="F:HttpPostRequestLib.Net.MimeTypes.Video.Wvx">
+	<summary>
+ Windows Media Video Redirector (*.wvx)
+ </summary>
+</member><member name="M:HttpPostRequestLib.Net.MimeTypes.GetMIMETypeByExtention(System.String)">
+	<summary>
+ Get the MIME type by the file extention
+ </summary>
+	<param name="Extention">Fileextention  (e.g.: 'txt')</param>
+	<returns>MIME type string</returns>
+</member><member name="M:HttpPostRequestLib.Net.HTTPPostRequest.#ctor(System.String)">
+	<summary>
+ Create new instance and set the url.
+ </summary>
+	<param name="URL"></param>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.HTTPPostRequest.SubmitASync">
+	<summary>
+ Transfer data to the url asynchron.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.HTTPPostRequest.Submit">
+	<summary>
+ Transfer data to the url.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.HTTPPostRequest.GetOSVersion">
+	<summary>
+ Get the version of the operationsystem.
+ </summary>
+	<returns>Returns version like 'Major.Minor'.</returns>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.HTTPPostRequest.GetLibVersion">
+	<summary>
+ Get the version of this libary
+ </summary>
+	<returns>Returns version like 'Major.Minor'.</returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.HTTPPostRequest.UserAgent">
+	<summary>
+ Get oder set UserAgent string.
+ </summary>
+	<value></value>
+	<returns>Useragent string</returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.HTTPPostRequest.Encoding">
+	<summary>
+ Get or set the encoding of post and retuned data. Default encoding is UTF8.
+ </summary>
+	<value></value>
+	<returns>Selected encoding</returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.HTTPPostRequest.Proxy">
+	<summary>
+ Get or set a proxy.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.HTTPPostRequest.Uri">
+	<summary>
+ Uri of request.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.HTTPPostRequest.Files">
+	<summary>
+ Collection of files
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.HTTPPostRequest.Post">
+	<summary>
+ Collection of post values
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.HTTPPostRequest.Cookies">
+	<summary>
+ Get or set the cookies for the request
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.HTTPPostRequest.CancelSubmit">
+	<summary>
+ Set cancel Flag on upload process. This fired a cancel event.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.Proxy.#ctor(System.String,System.Int32)">
+	<summary>
+ Create a new instance of proxy
+ </summary>
+	<param name="ProxyUri">Proxy URL (e.g.: http://www.example.com)</param>
+	<param name="ProxyPort">Proxy port (e.g.: 8080)</param>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.Proxy.#ctor(System.String,System.Int32,System.String,System.String)">
+	<summary>
+ Create a new instance of proxy
+ </summary>
+	<param name="ProxyUri">Proxy URL (e.g.: http://www.example.com)</param>
+	<param name="ProxyPort">Proxy port (e.g.: 8080)</param>
+	<param name="ProxyUser">Proxy username.</param>
+	<param name="ProxyPassword">Proxy password.</param>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.Proxy.Uri">
+	<summary>
+ Proxy URL (e.g.: http://www.example.com)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.Proxy.Port">
+	<summary>
+ Proxy port (e.g.: 8080)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.Proxy.Username">
+	<summary>
+ Proxy username.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.Proxy.Password">
+	<summary>
+ Proxy password
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.Proxy.ToWebProxy">
+	<summary>
+ Converts to WebProxy-Class
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.Net.Proxy.isProxy">
+	<summary>
+ Is proxy set
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.FileCollection.#ctor">
+	<summary>
+ Create new instance of FileCollection with standard encoding UTF-8
+ </summary>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.FileCollection.Add(System.String,System.String)">
+	<summary>
+ Add a local file to collection
+ </summary>
+	<param name="VarName">Variable Name</param>
+	<param name="FilePath">Absolute path to file</param>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.FileCollection.Add(System.String,System.String,System.Text.Encoding)">
+	<summary>
+ Add a local file to collection
+ </summary>
+	<param name="VarName">Variable Name</param>
+	<param name="FilePath">Absolute path to file</param>
+	<param name="enc">Encoding</param>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.FileCollection.Add(System.String,System.String,System.Byte[],System.String)">
+	<summary>
+ Add a local file to collection
+ </summary>
+	<param name="VarName">Variable Name</param>
+	<param name="Filename">Filename</param>
+	<param name="Data">Data as a byte-array</param>
+	<param name="MIMEType">MIME-Type (default: application/octet-stream)</param>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.FileCollection.Add(System.String,System.String,System.Byte[],System.Text.Encoding,System.String)">
+	<summary>
+ Add a local file to collection
+ </summary>
+	<param name="VarName">Variable Name</param>
+	<param name="Filename">Filename</param>
+	<param name="Data">Data as a byte-array</param>
+	<param name="enc">Encoding</param>
+	<param name="MIMEType">MIME-Type (default: application/octet-stream)</param>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.PostCollection.#ctor">
+	<summary>
+ Create new instance of PostCollection with standard encoding UTF-8
+ </summary>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.PostCollection.Add(System.String,System.String)">
+	<summary>
+ Add a POST variable to collection
+ </summary>
+	<param name="VarName">Variable Name</param>
+	<param name="Value">Value</param>
+	<remarks></remarks>
+</member><member name="M:HttpPostRequestLib.Net.PostCollection.Add(System.String,System.String,System.Text.Encoding)">
+	<summary>
+ Add a POST variable to collection
+ </summary>
+	<param name="VarName">Variable Name</param>
+	<param name="Value">Value</param>
+	<param name="enc">Encoding</param>
+	<remarks></remarks>
+</member><member name="P:HttpPostRequestLib.My.Resources.Resources.ResourceManager">
+	<summary>
+  Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+</summary>
+</member><member name="P:HttpPostRequestLib.My.Resources.Resources.Culture">
+	<summary>
+  Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+  Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+</summary>
+</member><member name="P:HttpPostRequestLib.My.Resources.Resources.mimetypes">
+	<summary>
+  Sucht eine lokalisierte Zeichenfolge, die application/SLA,stl
+application/STEP,step
+application/STEP,stp
+application/acad,dwg
+application/andrew-inset,ez
+application/clariscad,ccad
+application/drafting,drw
+application/dsptype,tsp
+application/dxf,dxf
+application/excel,xls
+application/i-deas,unv
+application/java-archive,jar
+application/mac-binhex40,hqx
+application/mac-compactpro,cpt
+application/vnd.ms-powerpoint,pot
+application/vnd.ms-powerpoint,pps
+application/vnd.ms-powerpoint,ppt
+application/vnd.ms-powerpoint,ppz
+application/mswo [Rest der Zeichenfolge wurde abgeschnitten]"; ähnelt.
+</summary>
+</member><member name="T:HttpPostRequestLib.My.Resources.Resources">
+	<summary>
+  Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+</summary>
+</member>
+</members>
+</doc>

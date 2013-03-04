@@ -1,0 +1,11 @@
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\bin\Debug\TecEdit.exe
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\bin\Debug\TecEdit.pdb
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\obj\x86\Debug\TecEdit.Properties.Resources.resources
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\obj\x86\Debug\TecEdit.exe
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\obj\x86\Debug\TecEdit.pdb
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\bin\Debug\HttpPostRequestLib4.xml
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\bin\Debug\ScintillaNET.xml
+C:\Users\Tobias\Documents\GitHub\TecEdit\TecEdit\TecEdit\obj\x86\Debug\TecEdit.Main.resources
