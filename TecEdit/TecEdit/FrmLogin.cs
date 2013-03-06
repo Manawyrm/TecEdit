@@ -105,10 +105,5 @@ namespace de.manawyrm.TecEdit
       if(closeApp)
         Utility.CloseApplication();     
     }
-
-    private void FrmLogin_Load(object sender, EventArgs e)
-    {
-
-    }
   }
 }

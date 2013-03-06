@@ -67,10 +67,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\externalLibs\updateSystemDotNet.Controller.dll</HintPath>
     </Reference>
-    <Reference Include="VistaMenu, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\externalLibs\VistaMenu.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrmLogin.cs">

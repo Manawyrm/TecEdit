@@ -28,71 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-      this.mmMain = new System.Windows.Forms.MainMenu(this.components);
-      this.DateiMenuItem = new System.Windows.Forms.MenuItem();
-      this.btnDTNew = new System.Windows.Forms.MenuItem();
-      this.btnDTOpenLocal = new System.Windows.Forms.MenuItem();
-      this.btnDTOpenExtern = new System.Windows.Forms.MenuItem();
-      this.MenuItem8 = new System.Windows.Forms.MenuItem();
-      this.btnDTSave = new System.Windows.Forms.MenuItem();
-      this.btnDTSaveLocal = new System.Windows.Forms.MenuItem();
-      this.btnDTSaveExtern = new System.Windows.Forms.MenuItem();
-      this.MenuItem12 = new System.Windows.Forms.MenuItem();
-      this.btnDTLogut = new System.Windows.Forms.MenuItem();
-      this.btnDTExit = new System.Windows.Forms.MenuItem();
-      this.BearbeitenMenuItem = new System.Windows.Forms.MenuItem();
-      this.btnEditUndo = new System.Windows.Forms.MenuItem();
-      this.btnEditRedo = new System.Windows.Forms.MenuItem();
-      this.MenuItem3 = new System.Windows.Forms.MenuItem();
-      this.btnEditCut = new System.Windows.Forms.MenuItem();
-      this.btnEditCopy = new System.Windows.Forms.MenuItem();
-      this.btnEditPaste = new System.Windows.Forms.MenuItem();
-      this.MenuItem7 = new System.Windows.Forms.MenuItem();
-      this.btnEditSelectAll = new System.Windows.Forms.MenuItem();
-      this.MenuItem10 = new System.Windows.Forms.MenuItem();
-      this.btnEditReplace = new System.Windows.Forms.MenuItem();
-      this.AnsichtMenuItem = new System.Windows.Forms.MenuItem();
-      this.btnViewSymbolBar = new System.Windows.Forms.MenuItem();
-      this.btnViewStatebar = new System.Windows.Forms.MenuItem();
-      this.ExtrasMenuItem = new System.Windows.Forms.MenuItem();
-      this.btnExtComputerVerwaltung = new System.Windows.Forms.MenuItem();
-      this.MenuItem6 = new System.Windows.Forms.MenuItem();
-      this.btnExtOption = new System.Windows.Forms.MenuItem();
-      this.HilfeMenuItem = new System.Windows.Forms.MenuItem();
-      this.MenuItem11 = new System.Windows.Forms.MenuItem();
-      this.MenuItem14 = new System.Windows.Forms.MenuItem();
-      this.MenuItem15 = new System.Windows.Forms.MenuItem();
-      this.MenuItem16 = new System.Windows.Forms.MenuItem();
-      this.MenuItem17 = new System.Windows.Forms.MenuItem();
-      this.MenuItem18 = new System.Windows.Forms.MenuItem();
-      this.MenuItem19 = new System.Windows.Forms.MenuItem();
-      this.MenuItem20 = new System.Windows.Forms.MenuItem();
-      this.MenuItem21 = new System.Windows.Forms.MenuItem();
-      this.MenuItem22 = new System.Windows.Forms.MenuItem();
-      this.MenuItem23 = new System.Windows.Forms.MenuItem();
-      this.MenuItem24 = new System.Windows.Forms.MenuItem();
-      this.MenuItem25 = new System.Windows.Forms.MenuItem();
-      this.MenuItem26 = new System.Windows.Forms.MenuItem();
-      this.MenuItem27 = new System.Windows.Forms.MenuItem();
-      this.MenuItem28 = new System.Windows.Forms.MenuItem();
-      this.MenuItem29 = new System.Windows.Forms.MenuItem();
-      this.MenuItem30 = new System.Windows.Forms.MenuItem();
-      this.MenuItem31 = new System.Windows.Forms.MenuItem();
-      this.MenuItem32 = new System.Windows.Forms.MenuItem();
-      this.MenuItem33 = new System.Windows.Forms.MenuItem();
-      this.MenuItem34 = new System.Windows.Forms.MenuItem();
-      this.MenuItem35 = new System.Windows.Forms.MenuItem();
-      this.MenuItem36 = new System.Windows.Forms.MenuItem();
-      this.MenuItem37 = new System.Windows.Forms.MenuItem();
-      this.MenuItem38 = new System.Windows.Forms.MenuItem();
-      this.MenuItem39 = new System.Windows.Forms.MenuItem();
-      this.MenuItem13 = new System.Windows.Forms.MenuItem();
-      this.FehlermeldenMenuItem = new System.Windows.Forms.MenuItem();
-      this.UpdateSucheMenuItem = new System.Windows.Forms.MenuItem();
-      this.MenuItem4 = new System.Windows.Forms.MenuItem();
-      this.InfoMenuItem = new System.Windows.Forms.MenuItem();
       this.btnmmNew = new System.Windows.Forms.ToolStripButton();
       this.btnmmOpen = new System.Windows.Forms.ToolStripButton();
       this.btnmmSave = new System.Windows.Forms.ToolStripButton();
@@ -111,7 +47,7 @@
       this.ToolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ToolStripButton4 = new System.Windows.Forms.ToolStripButton();
       this.ToolStripButton5 = new System.Windows.Forms.ToolStripButton();
-      this.tsMain = new System.Windows.Forms.ToolStrip();
+      this.barSymbol = new System.Windows.Forms.ToolStrip();
       this.btnNewFile = new System.Windows.Forms.ToolStripButton();
       this.btnOpen = new System.Windows.Forms.ToolStripButton();
       this.btnSave = new System.Windows.Forms.ToolStripButton();
@@ -122,400 +58,52 @@
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.btnCommentOut = new System.Windows.Forms.ToolStripButton();
       this.btnCommentIn = new System.Windows.Forms.ToolStripButton();
-      this.tsMain.SuspendLayout();
+      this.mmMain = new System.Windows.Forms.MenuStrip();
+      this.btDTMain = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnDTNew = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnDTOpenLocal = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnDTOpenLua = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.btnDTSave = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnDTSaveLocal = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnDTSaveOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+      this.btnDTLogout = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnDTExit = new System.Windows.Forms.ToolStripMenuItem();
+      this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnEditUndo = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnEditRedo = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+      this.btnEditCut = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnEditCopy = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnEditPaste = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+      this.btnEditSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+      this.btnEditReplace = new System.Windows.Forms.ToolStripMenuItem();
+      this.ansichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnViewSymbol = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnViewStatus = new System.Windows.Forms.ToolStripMenuItem();
+      this.extrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnExtraCManager = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+      this.btnExtraOptions = new System.Windows.Forms.ToolStripMenuItem();
+      this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnHelpDokumentation = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnHelpApi = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnHelpCommunity = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.btnHelpReportError = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnHelpSearchUpdates = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+      this.btnHelpInfo = new System.Windows.Forms.ToolStripMenuItem();
+      this.barStatus = new System.Windows.Forms.StatusStrip();
+      this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+      this.btnTest = new System.Windows.Forms.ToolStripMenuItem();
+      this.barSymbol.SuspendLayout();
+      this.mmMain.SuspendLayout();
+      this.barStatus.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // mmMain
-      // 
-      this.mmMain.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.DateiMenuItem,
-            this.BearbeitenMenuItem,
-            this.AnsichtMenuItem,
-            this.ExtrasMenuItem,
-            this.HilfeMenuItem});
-      // 
-      // DateiMenuItem
-      // 
-      this.DateiMenuItem.Index = 0;
-      this.DateiMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.btnDTNew,
-            this.btnDTOpenLocal,
-            this.btnDTOpenExtern,
-            this.MenuItem8,
-            this.btnDTSave,
-            this.btnDTSaveLocal,
-            this.btnDTSaveExtern,
-            this.MenuItem12,
-            this.btnDTLogut,
-            this.btnDTExit});
-      this.DateiMenuItem.Text = "Datei";
-      // 
-      // btnDTNew
-      // 
-      this.btnDTNew.Index = 0;
-      this.btnDTNew.Shortcut = System.Windows.Forms.Shortcut.CtrlN;
-      this.btnDTNew.Text = "Neue Datei";
-      // 
-      // btnDTOpenLocal
-      // 
-      this.btnDTOpenLocal.Index = 1;
-      this.btnDTOpenLocal.Text = "Lokale Datei öffnen";
-      // 
-      // btnDTOpenExtern
-      // 
-      this.btnDTOpenExtern.Index = 2;
-      this.btnDTOpenExtern.Shortcut = System.Windows.Forms.Shortcut.CtrlO;
-      this.btnDTOpenExtern.Text = "LUA-Script öffnen";
-      // 
-      // MenuItem8
-      // 
-      this.MenuItem8.Index = 3;
-      this.MenuItem8.Text = "-";
-      // 
-      // btnDTSave
-      // 
-      this.btnDTSave.Index = 4;
-      this.btnDTSave.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
-      this.btnDTSave.Text = "Speichern";
-      // 
-      // btnDTSaveLocal
-      // 
-      this.btnDTSaveLocal.Index = 5;
-      this.btnDTSaveLocal.Text = "Lokal speichern";
-      // 
-      // btnDTSaveExtern
-      // 
-      this.btnDTSaveExtern.Index = 6;
-      this.btnDTSaveExtern.Text = "Online speichern";
-      // 
-      // MenuItem12
-      // 
-      this.MenuItem12.Index = 7;
-      this.MenuItem12.Text = "-";
-      // 
-      // btnDTLogut
-      // 
-      this.btnDTLogut.Index = 8;
-      this.btnDTLogut.Text = "Abmelden";
-      this.btnDTLogut.Click += new System.EventHandler(this.btnDTLogut_Click);
-      // 
-      // btnDTExit
-      // 
-      this.btnDTExit.Index = 9;
-      this.btnDTExit.Text = "Beenden";
-      this.btnDTExit.Click += new System.EventHandler(this.btnDTExit_Click);
-      // 
-      // BearbeitenMenuItem
-      // 
-      this.BearbeitenMenuItem.Index = 1;
-      this.BearbeitenMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.btnEditUndo,
-            this.btnEditRedo,
-            this.MenuItem3,
-            this.btnEditCut,
-            this.btnEditCopy,
-            this.btnEditPaste,
-            this.MenuItem7,
-            this.btnEditSelectAll,
-            this.MenuItem10,
-            this.btnEditReplace});
-      this.BearbeitenMenuItem.Text = "Bearbeiten";
-      // 
-      // btnEditUndo
-      // 
-      this.btnEditUndo.Index = 0;
-      this.btnEditUndo.Text = "Rückgängig";
-      // 
-      // btnEditRedo
-      // 
-      this.btnEditRedo.Index = 1;
-      this.btnEditRedo.Text = "Wiederholen";
-      // 
-      // MenuItem3
-      // 
-      this.MenuItem3.Index = 2;
-      this.MenuItem3.Text = "-";
-      // 
-      // btnEditCut
-      // 
-      this.btnEditCut.Index = 3;
-      this.btnEditCut.Text = "Ausschneiden";
-      // 
-      // btnEditCopy
-      // 
-      this.btnEditCopy.Index = 4;
-      this.btnEditCopy.Text = "Kopieren";
-      // 
-      // btnEditPaste
-      // 
-      this.btnEditPaste.Index = 5;
-      this.btnEditPaste.Text = "Einfügen";
-      // 
-      // MenuItem7
-      // 
-      this.MenuItem7.Index = 6;
-      this.MenuItem7.Text = "-";
-      // 
-      // btnEditSelectAll
-      // 
-      this.btnEditSelectAll.Index = 7;
-      this.btnEditSelectAll.Text = "Alle auswählen";
-      // 
-      // MenuItem10
-      // 
-      this.MenuItem10.Index = 8;
-      this.MenuItem10.Text = "-";
-      // 
-      // btnEditReplace
-      // 
-      this.btnEditReplace.Index = 9;
-      this.btnEditReplace.Text = "Ersetzen";
-      // 
-      // AnsichtMenuItem
-      // 
-      this.AnsichtMenuItem.Index = 2;
-      this.AnsichtMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.btnViewSymbolBar,
-            this.btnViewStatebar});
-      this.AnsichtMenuItem.Text = "Ansicht";
-      // 
-      // btnViewSymbolBar
-      // 
-      this.btnViewSymbolBar.Checked = true;
-      this.btnViewSymbolBar.Index = 0;
-      this.btnViewSymbolBar.Text = "Symbolleiste";
-      // 
-      // btnViewStatebar
-      // 
-      this.btnViewStatebar.Checked = true;
-      this.btnViewStatebar.Index = 1;
-      this.btnViewStatebar.Text = "Statusleiste";
-      // 
-      // ExtrasMenuItem
-      // 
-      this.ExtrasMenuItem.Index = 3;
-      this.ExtrasMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.btnExtComputerVerwaltung,
-            this.MenuItem6,
-            this.btnExtOption});
-      this.ExtrasMenuItem.Text = "Extras";
-      // 
-      // btnExtComputerVerwaltung
-      // 
-      this.btnExtComputerVerwaltung.Index = 0;
-      this.btnExtComputerVerwaltung.Text = "Computerverwaltung";
-      // 
-      // MenuItem6
-      // 
-      this.MenuItem6.Index = 1;
-      this.MenuItem6.Text = "-";
-      // 
-      // btnExtOption
-      // 
-      this.btnExtOption.Enabled = false;
-      this.btnExtOption.Index = 2;
-      this.btnExtOption.Text = "Optionen";
-      // 
-      // HilfeMenuItem
-      // 
-      this.HilfeMenuItem.Index = 4;
-      this.HilfeMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MenuItem11,
-            this.MenuItem13,
-            this.FehlermeldenMenuItem,
-            this.UpdateSucheMenuItem,
-            this.MenuItem4,
-            this.InfoMenuItem});
-      this.HilfeMenuItem.Text = "Hilfe";
-      // 
-      // MenuItem11
-      // 
-      this.MenuItem11.Index = 0;
-      this.MenuItem11.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MenuItem14,
-            this.MenuItem38});
-      this.MenuItem11.Text = "Dokumentationen";
-      // 
-      // MenuItem14
-      // 
-      this.MenuItem14.Index = 0;
-      this.MenuItem14.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MenuItem15,
-            this.MenuItem16,
-            this.MenuItem17,
-            this.MenuItem18,
-            this.MenuItem19,
-            this.MenuItem20,
-            this.MenuItem21,
-            this.MenuItem22,
-            this.MenuItem23,
-            this.MenuItem24,
-            this.MenuItem25,
-            this.MenuItem26,
-            this.MenuItem27,
-            this.MenuItem28,
-            this.MenuItem29,
-            this.MenuItem30,
-            this.MenuItem31,
-            this.MenuItem32,
-            this.MenuItem33,
-            this.MenuItem34,
-            this.MenuItem35,
-            this.MenuItem36,
-            this.MenuItem37});
-      this.MenuItem14.Text = "APIs";
-      // 
-      // MenuItem15
-      // 
-      this.MenuItem15.Index = 0;
-      this.MenuItem15.Text = "Bit";
-      // 
-      // MenuItem16
-      // 
-      this.MenuItem16.Index = 1;
-      this.MenuItem16.Text = "Colors";
-      // 
-      // MenuItem17
-      // 
-      this.MenuItem17.Index = 2;
-      this.MenuItem17.Text = "Coroutine";
-      // 
-      // MenuItem18
-      // 
-      this.MenuItem18.Index = 3;
-      this.MenuItem18.Text = "Disk";
-      // 
-      // MenuItem19
-      // 
-      this.MenuItem19.Index = 4;
-      this.MenuItem19.Text = "Fs";
-      // 
-      // MenuItem20
-      // 
-      this.MenuItem20.Index = 5;
-      this.MenuItem20.Text = "Gps";
-      // 
-      // MenuItem21
-      // 
-      this.MenuItem21.Index = 6;
-      this.MenuItem21.Text = "Help";
-      // 
-      // MenuItem22
-      // 
-      this.MenuItem22.Index = 7;
-      this.MenuItem22.Text = "HTTP";
-      // 
-      // MenuItem23
-      // 
-      this.MenuItem23.Index = 8;
-      this.MenuItem23.Text = "IO";
-      // 
-      // MenuItem24
-      // 
-      this.MenuItem24.Index = 9;
-      this.MenuItem24.Text = "Math";
-      // 
-      // MenuItem25
-      // 
-      this.MenuItem25.Index = 10;
-      this.MenuItem25.Text = "OS";
-      // 
-      // MenuItem26
-      // 
-      this.MenuItem26.Index = 11;
-      this.MenuItem26.Text = "Paintutils";
-      // 
-      // MenuItem27
-      // 
-      this.MenuItem27.Index = 12;
-      this.MenuItem27.Text = "Parallel";
-      // 
-      // MenuItem28
-      // 
-      this.MenuItem28.Index = 13;
-      this.MenuItem28.Text = "Peripheral";
-      // 
-      // MenuItem29
-      // 
-      this.MenuItem29.Index = 14;
-      this.MenuItem29.Text = "Rednet";
-      // 
-      // MenuItem30
-      // 
-      this.MenuItem30.Index = 15;
-      this.MenuItem30.Text = "Redstone";
-      // 
-      // MenuItem31
-      // 
-      this.MenuItem31.Index = 16;
-      this.MenuItem31.Text = "Shell";
-      // 
-      // MenuItem32
-      // 
-      this.MenuItem32.Index = 17;
-      this.MenuItem32.Text = "String";
-      // 
-      // MenuItem33
-      // 
-      this.MenuItem33.Index = 18;
-      this.MenuItem33.Text = "Table";
-      // 
-      // MenuItem34
-      // 
-      this.MenuItem34.Index = 19;
-      this.MenuItem34.Text = "Term";
-      // 
-      // MenuItem35
-      // 
-      this.MenuItem35.Index = 20;
-      this.MenuItem35.Text = "Textutils";
-      // 
-      // MenuItem36
-      // 
-      this.MenuItem36.Index = 21;
-      this.MenuItem36.Text = "Turtle";
-      // 
-      // MenuItem37
-      // 
-      this.MenuItem37.Index = 22;
-      this.MenuItem37.Text = "Vector";
-      // 
-      // MenuItem38
-      // 
-      this.MenuItem38.Index = 1;
-      this.MenuItem38.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MenuItem39});
-      this.MenuItem38.Text = "Foren";
-      // 
-      // MenuItem39
-      // 
-      this.MenuItem39.Index = 0;
-      this.MenuItem39.Text = "ComputerCraft.info";
-      // 
-      // MenuItem13
-      // 
-      this.MenuItem13.Index = 1;
-      this.MenuItem13.Text = "-";
-      // 
-      // FehlermeldenMenuItem
-      // 
-      this.FehlermeldenMenuItem.Index = 2;
-      this.FehlermeldenMenuItem.Text = "Fehler melden";
-      // 
-      // UpdateSucheMenuItem
-      // 
-      this.UpdateSucheMenuItem.Index = 3;
-      this.UpdateSucheMenuItem.Text = "Nach Updates suchen";
-      // 
-      // MenuItem4
-      // 
-      this.MenuItem4.Index = 4;
-      this.MenuItem4.Text = "-";
-      // 
-      // InfoMenuItem
-      // 
-      this.InfoMenuItem.Index = 5;
-      this.InfoMenuItem.Text = "Info...";
       // 
       // btnmmNew
       // 
@@ -663,10 +251,10 @@
       this.ToolStripButton5.Size = new System.Drawing.Size(23, 22);
       this.ToolStripButton5.Text = "Auskommentierung aufheben";
       // 
-      // tsMain
+      // barSymbol
       // 
-      this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-      this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.barSymbol.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+      this.barSymbol.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNewFile,
             this.btnOpen,
             this.btnSave,
@@ -677,11 +265,11 @@
             this.toolStripSeparator3,
             this.btnCommentOut,
             this.btnCommentIn});
-      this.tsMain.Location = new System.Drawing.Point(0, 0);
-      this.tsMain.Name = "tsMain";
-      this.tsMain.Size = new System.Drawing.Size(852, 25);
-      this.tsMain.TabIndex = 7;
-      this.tsMain.Text = "ToolStrip";
+      this.barSymbol.Location = new System.Drawing.Point(0, 24);
+      this.barSymbol.Name = "barSymbol";
+      this.barSymbol.Size = new System.Drawing.Size(852, 25);
+      this.barSymbol.TabIndex = 7;
+      this.barSymbol.Text = "ToolStrip";
       // 
       // btnNewFile
       // 
@@ -765,19 +353,340 @@
       this.btnCommentIn.Size = new System.Drawing.Size(23, 22);
       this.btnCommentIn.Text = "Auskommentierung aufheben";
       // 
+      // mmMain
+      // 
+      this.mmMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btDTMain,
+            this.bearbeitenToolStripMenuItem,
+            this.ansichtToolStripMenuItem,
+            this.extrasToolStripMenuItem,
+            this.hilfeToolStripMenuItem,
+            this.btnTest});
+      this.mmMain.Location = new System.Drawing.Point(0, 0);
+      this.mmMain.Name = "mmMain";
+      this.mmMain.Size = new System.Drawing.Size(852, 24);
+      this.mmMain.TabIndex = 8;
+      this.mmMain.Text = "menuStrip1";
+      // 
+      // btDTMain
+      // 
+      this.btDTMain.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnDTNew,
+            this.btnDTOpenLocal,
+            this.btnDTOpenLua,
+            this.toolStripSeparator5,
+            this.btnDTSave,
+            this.btnDTSaveLocal,
+            this.btnDTSaveOnline,
+            this.toolStripSeparator6,
+            this.btnDTLogout,
+            this.btnDTExit});
+      this.btDTMain.Name = "btDTMain";
+      this.btDTMain.ShortcutKeyDisplayString = "D";
+      this.btDTMain.Size = new System.Drawing.Size(46, 20);
+      this.btDTMain.Text = "&Datei";
+      // 
+      // btnDTNew
+      // 
+      this.btnDTNew.Image = global::de.manawyrm.TecEdit.Properties.Resources.page;
+      this.btnDTNew.Name = "btnDTNew";
+      this.btnDTNew.Size = new System.Drawing.Size(176, 22);
+      this.btnDTNew.Text = "Neue Datei";
+      // 
+      // btnDTOpenLocal
+      // 
+      this.btnDTOpenLocal.Image = global::de.manawyrm.TecEdit.Properties.Resources.folder_page;
+      this.btnDTOpenLocal.Name = "btnDTOpenLocal";
+      this.btnDTOpenLocal.Size = new System.Drawing.Size(176, 22);
+      this.btnDTOpenLocal.Text = "Lokale Datei öffnen";
+      // 
+      // btnDTOpenLua
+      // 
+      this.btnDTOpenLua.Name = "btnDTOpenLua";
+      this.btnDTOpenLua.Size = new System.Drawing.Size(176, 22);
+      this.btnDTOpenLua.Text = "Lua-Script öffnen";
+      // 
+      // toolStripSeparator5
+      // 
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      this.toolStripSeparator5.Size = new System.Drawing.Size(173, 6);
+      // 
+      // btnDTSave
+      // 
+      this.btnDTSave.Image = global::de.manawyrm.TecEdit.Properties.Resources.disk;
+      this.btnDTSave.Name = "btnDTSave";
+      this.btnDTSave.Size = new System.Drawing.Size(176, 22);
+      this.btnDTSave.Text = "Speichern";
+      // 
+      // btnDTSaveLocal
+      // 
+      this.btnDTSaveLocal.Name = "btnDTSaveLocal";
+      this.btnDTSaveLocal.Size = new System.Drawing.Size(176, 22);
+      this.btnDTSaveLocal.Text = "Lokal speichern";
+      // 
+      // btnDTSaveOnline
+      // 
+      this.btnDTSaveOnline.Name = "btnDTSaveOnline";
+      this.btnDTSaveOnline.Size = new System.Drawing.Size(176, 22);
+      this.btnDTSaveOnline.Text = "Online speichern";
+      // 
+      // toolStripSeparator6
+      // 
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
+      this.toolStripSeparator6.Size = new System.Drawing.Size(173, 6);
+      // 
+      // btnDTLogout
+      // 
+      this.btnDTLogout.Name = "btnDTLogout";
+      this.btnDTLogout.Size = new System.Drawing.Size(176, 22);
+      this.btnDTLogout.Text = "Abmelden";
+      this.btnDTLogout.Click += new System.EventHandler(this.btnDTLogut_Click);
+      // 
+      // btnDTExit
+      // 
+      this.btnDTExit.Name = "btnDTExit";
+      this.btnDTExit.Size = new System.Drawing.Size(176, 22);
+      this.btnDTExit.Text = "Beenden";
+      this.btnDTExit.Click += new System.EventHandler(this.btnDTExit_Click);
+      // 
+      // bearbeitenToolStripMenuItem
+      // 
+      this.bearbeitenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnEditUndo,
+            this.btnEditRedo,
+            this.toolStripSeparator7,
+            this.btnEditCut,
+            this.btnEditCopy,
+            this.btnEditPaste,
+            this.toolStripSeparator8,
+            this.btnEditSelectAll,
+            this.toolStripSeparator9,
+            this.btnEditReplace});
+      this.bearbeitenToolStripMenuItem.Name = "bearbeitenToolStripMenuItem";
+      this.bearbeitenToolStripMenuItem.ShortcutKeyDisplayString = "B";
+      this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+      this.bearbeitenToolStripMenuItem.Text = "&Bearbeiten";
+      // 
+      // btnEditUndo
+      // 
+      this.btnEditUndo.Name = "btnEditUndo";
+      this.btnEditUndo.Size = new System.Drawing.Size(158, 22);
+      this.btnEditUndo.Text = "Rückgängig";
+      // 
+      // btnEditRedo
+      // 
+      this.btnEditRedo.Name = "btnEditRedo";
+      this.btnEditRedo.Size = new System.Drawing.Size(158, 22);
+      this.btnEditRedo.Text = "Wiederholen";
+      // 
+      // toolStripSeparator7
+      // 
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
+      this.toolStripSeparator7.Size = new System.Drawing.Size(155, 6);
+      // 
+      // btnEditCut
+      // 
+      this.btnEditCut.Image = global::de.manawyrm.TecEdit.Properties.Resources.cut_red;
+      this.btnEditCut.Name = "btnEditCut";
+      this.btnEditCut.Size = new System.Drawing.Size(158, 22);
+      this.btnEditCut.Text = "Ausschneiden";
+      // 
+      // btnEditCopy
+      // 
+      this.btnEditCopy.Image = global::de.manawyrm.TecEdit.Properties.Resources.page_copy;
+      this.btnEditCopy.Name = "btnEditCopy";
+      this.btnEditCopy.Size = new System.Drawing.Size(158, 22);
+      this.btnEditCopy.Text = "Kopieren";
+      // 
+      // btnEditPaste
+      // 
+      this.btnEditPaste.Image = global::de.manawyrm.TecEdit.Properties.Resources.page_paste;
+      this.btnEditPaste.Name = "btnEditPaste";
+      this.btnEditPaste.Size = new System.Drawing.Size(158, 22);
+      this.btnEditPaste.Text = "Einfügen";
+      // 
+      // toolStripSeparator8
+      // 
+      this.toolStripSeparator8.Name = "toolStripSeparator8";
+      this.toolStripSeparator8.Size = new System.Drawing.Size(155, 6);
+      // 
+      // btnEditSelectAll
+      // 
+      this.btnEditSelectAll.Name = "btnEditSelectAll";
+      this.btnEditSelectAll.Size = new System.Drawing.Size(158, 22);
+      this.btnEditSelectAll.Text = "Alles auswählen";
+      // 
+      // toolStripSeparator9
+      // 
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      this.toolStripSeparator9.Size = new System.Drawing.Size(155, 6);
+      // 
+      // btnEditReplace
+      // 
+      this.btnEditReplace.Name = "btnEditReplace";
+      this.btnEditReplace.Size = new System.Drawing.Size(158, 22);
+      this.btnEditReplace.Text = "Ersetzen";
+      // 
+      // ansichtToolStripMenuItem
+      // 
+      this.ansichtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnViewSymbol,
+            this.btnViewStatus});
+      this.ansichtToolStripMenuItem.Name = "ansichtToolStripMenuItem";
+      this.ansichtToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+      this.ansichtToolStripMenuItem.Text = "Ansicht";
+      // 
+      // btnViewSymbol
+      // 
+      this.btnViewSymbol.Checked = true;
+      this.btnViewSymbol.CheckOnClick = true;
+      this.btnViewSymbol.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.btnViewSymbol.Name = "btnViewSymbol";
+      this.btnViewSymbol.Size = new System.Drawing.Size(141, 22);
+      this.btnViewSymbol.Text = "Symbolleiste";
+      this.btnViewSymbol.Click += new System.EventHandler(this.btnViewSymbol_Click);
+      // 
+      // btnViewStatus
+      // 
+      this.btnViewStatus.Checked = true;
+      this.btnViewStatus.CheckOnClick = true;
+      this.btnViewStatus.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.btnViewStatus.Name = "btnViewStatus";
+      this.btnViewStatus.Size = new System.Drawing.Size(141, 22);
+      this.btnViewStatus.Text = "Statusleiste";
+      this.btnViewStatus.Click += new System.EventHandler(this.btnViewStatus_Click);
+      // 
+      // extrasToolStripMenuItem
+      // 
+      this.extrasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnExtraCManager,
+            this.toolStripSeparator10,
+            this.btnExtraOptions});
+      this.extrasToolStripMenuItem.Name = "extrasToolStripMenuItem";
+      this.extrasToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+      this.extrasToolStripMenuItem.Text = "Extras";
+      // 
+      // btnExtraCManager
+      // 
+      this.btnExtraCManager.Name = "btnExtraCManager";
+      this.btnExtraCManager.Size = new System.Drawing.Size(187, 22);
+      this.btnExtraCManager.Text = "Computerverwaltung";
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      this.toolStripSeparator10.Size = new System.Drawing.Size(184, 6);
+      // 
+      // btnExtraOptions
+      // 
+      this.btnExtraOptions.Enabled = false;
+      this.btnExtraOptions.Name = "btnExtraOptions";
+      this.btnExtraOptions.Size = new System.Drawing.Size(187, 22);
+      this.btnExtraOptions.Text = "Optionen";
+      // 
+      // hilfeToolStripMenuItem
+      // 
+      this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnHelpDokumentation,
+            this.toolStripSeparator11,
+            this.btnHelpReportError,
+            this.btnHelpSearchUpdates,
+            this.toolStripSeparator12,
+            this.btnHelpInfo});
+      this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
+      this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+      this.hilfeToolStripMenuItem.Text = "Hilfe";
+      // 
+      // btnHelpDokumentation
+      // 
+      this.btnHelpDokumentation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnHelpApi,
+            this.btnHelpCommunity});
+      this.btnHelpDokumentation.Name = "btnHelpDokumentation";
+      this.btnHelpDokumentation.Size = new System.Drawing.Size(189, 22);
+      this.btnHelpDokumentation.Text = "Dokumentationen";
+      // 
+      // btnHelpApi
+      // 
+      this.btnHelpApi.Name = "btnHelpApi";
+      this.btnHelpApi.Size = new System.Drawing.Size(104, 22);
+      this.btnHelpApi.Text = "APIs";
+      // 
+      // btnHelpCommunity
+      // 
+      this.btnHelpCommunity.Name = "btnHelpCommunity";
+      this.btnHelpCommunity.Size = new System.Drawing.Size(104, 22);
+      this.btnHelpCommunity.Text = "Foren";
+      // 
+      // toolStripSeparator11
+      // 
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
+      this.toolStripSeparator11.Size = new System.Drawing.Size(186, 6);
+      // 
+      // btnHelpReportError
+      // 
+      this.btnHelpReportError.Name = "btnHelpReportError";
+      this.btnHelpReportError.Size = new System.Drawing.Size(189, 22);
+      this.btnHelpReportError.Text = "Fehler melden";
+      // 
+      // btnHelpSearchUpdates
+      // 
+      this.btnHelpSearchUpdates.Name = "btnHelpSearchUpdates";
+      this.btnHelpSearchUpdates.Size = new System.Drawing.Size(189, 22);
+      this.btnHelpSearchUpdates.Text = "Nach Updates suchen";
+      // 
+      // toolStripSeparator12
+      // 
+      this.toolStripSeparator12.Name = "toolStripSeparator12";
+      this.toolStripSeparator12.Size = new System.Drawing.Size(186, 6);
+      // 
+      // btnHelpInfo
+      // 
+      this.btnHelpInfo.Name = "btnHelpInfo";
+      this.btnHelpInfo.Size = new System.Drawing.Size(189, 22);
+      this.btnHelpInfo.Text = "Info...";
+      // 
+      // barStatus
+      // 
+      this.barStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus});
+      this.barStatus.Location = new System.Drawing.Point(0, 313);
+      this.barStatus.Name = "barStatus";
+      this.barStatus.Size = new System.Drawing.Size(852, 22);
+      this.barStatus.TabIndex = 9;
+      // 
+      // lblStatus
+      // 
+      this.lblStatus.Name = "lblStatus";
+      this.lblStatus.Size = new System.Drawing.Size(52, 17);
+      this.lblStatus.Text = "lblStatus";
+      // 
+      // btnTest
+      // 
+      this.btnTest.Name = "btnTest";
+      this.btnTest.Size = new System.Drawing.Size(76, 20);
+      this.btnTest.Text = "TESTFUNC";
+      this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+      // 
       // FrmMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(852, 335);
-      this.Controls.Add(this.tsMain);
+      this.Controls.Add(this.barStatus);
+      this.Controls.Add(this.barSymbol);
+      this.Controls.Add(this.mmMain);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-      this.Menu = this.mmMain;
+      this.MainMenuStrip = this.mmMain;
       this.Name = "FrmMain";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "TecEdit";
-      this.tsMain.ResumeLayout(false);
-      this.tsMain.PerformLayout();
+      this.barSymbol.ResumeLayout(false);
+      this.barSymbol.PerformLayout();
+      this.mmMain.ResumeLayout(false);
+      this.mmMain.PerformLayout();
+      this.barStatus.ResumeLayout(false);
+      this.barStatus.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -785,67 +694,6 @@
 
     #endregion
 
-    private System.Windows.Forms.MainMenu mmMain;
-    private System.Windows.Forms.MenuItem DateiMenuItem;
-    private System.Windows.Forms.MenuItem btnDTNew;
-    private System.Windows.Forms.MenuItem btnDTOpenLocal;
-    private System.Windows.Forms.MenuItem btnDTOpenExtern;
-    private System.Windows.Forms.MenuItem MenuItem8;
-    private System.Windows.Forms.MenuItem btnDTSave;
-    private System.Windows.Forms.MenuItem btnDTSaveLocal;
-    private System.Windows.Forms.MenuItem btnDTSaveExtern;
-    private System.Windows.Forms.MenuItem MenuItem12;
-    private System.Windows.Forms.MenuItem btnDTLogut;
-    private System.Windows.Forms.MenuItem btnDTExit;
-    private System.Windows.Forms.MenuItem BearbeitenMenuItem;
-    private System.Windows.Forms.MenuItem btnEditRedo;
-    private System.Windows.Forms.MenuItem MenuItem3;
-    private System.Windows.Forms.MenuItem btnEditCut;
-    private System.Windows.Forms.MenuItem btnEditPaste;
-    private System.Windows.Forms.MenuItem MenuItem7;
-    private System.Windows.Forms.MenuItem btnEditSelectAll;
-    private System.Windows.Forms.MenuItem MenuItem10;
-    private System.Windows.Forms.MenuItem btnEditReplace;
-    private System.Windows.Forms.MenuItem AnsichtMenuItem;
-    private System.Windows.Forms.MenuItem btnViewSymbolBar;
-    private System.Windows.Forms.MenuItem btnViewStatebar;
-    private System.Windows.Forms.MenuItem ExtrasMenuItem;
-    private System.Windows.Forms.MenuItem btnExtComputerVerwaltung;
-    private System.Windows.Forms.MenuItem MenuItem6;
-    private System.Windows.Forms.MenuItem btnExtOption;
-    private System.Windows.Forms.MenuItem HilfeMenuItem;
-    private System.Windows.Forms.MenuItem MenuItem11;
-    private System.Windows.Forms.MenuItem MenuItem14;
-    private System.Windows.Forms.MenuItem MenuItem15;
-    private System.Windows.Forms.MenuItem MenuItem16;
-    private System.Windows.Forms.MenuItem MenuItem17;
-    private System.Windows.Forms.MenuItem MenuItem18;
-    private System.Windows.Forms.MenuItem MenuItem19;
-    private System.Windows.Forms.MenuItem MenuItem20;
-    private System.Windows.Forms.MenuItem MenuItem21;
-    private System.Windows.Forms.MenuItem MenuItem22;
-    private System.Windows.Forms.MenuItem MenuItem23;
-    private System.Windows.Forms.MenuItem MenuItem24;
-    private System.Windows.Forms.MenuItem MenuItem25;
-    private System.Windows.Forms.MenuItem MenuItem26;
-    private System.Windows.Forms.MenuItem MenuItem27;
-    private System.Windows.Forms.MenuItem MenuItem28;
-    private System.Windows.Forms.MenuItem MenuItem29;
-    private System.Windows.Forms.MenuItem MenuItem30;
-    private System.Windows.Forms.MenuItem MenuItem31;
-    private System.Windows.Forms.MenuItem MenuItem32;
-    private System.Windows.Forms.MenuItem MenuItem33;
-    private System.Windows.Forms.MenuItem MenuItem34;
-    private System.Windows.Forms.MenuItem MenuItem35;
-    private System.Windows.Forms.MenuItem MenuItem36;
-    private System.Windows.Forms.MenuItem MenuItem37;
-    private System.Windows.Forms.MenuItem MenuItem38;
-    private System.Windows.Forms.MenuItem MenuItem39;
-    private System.Windows.Forms.MenuItem MenuItem13;
-    private System.Windows.Forms.MenuItem FehlermeldenMenuItem;
-    private System.Windows.Forms.MenuItem UpdateSucheMenuItem;
-    private System.Windows.Forms.MenuItem MenuItem4;
-    private System.Windows.Forms.MenuItem InfoMenuItem;
     private System.Windows.Forms.ToolStripButton btnmmNew;
     private System.Windows.Forms.ToolStripButton btnmmOpen;
     private System.Windows.Forms.ToolStripButton btnmmSave;
@@ -864,7 +712,7 @@
     private System.Windows.Forms.ToolStripSeparator ToolStripSeparator4;
     private System.Windows.Forms.ToolStripButton ToolStripButton4;
     private System.Windows.Forms.ToolStripButton ToolStripButton5;
-    internal System.Windows.Forms.ToolStrip tsMain;
+    internal System.Windows.Forms.ToolStrip barSymbol;
     private System.Windows.Forms.ToolStripButton btnNewFile;
     internal System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     internal System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -875,8 +723,48 @@
     private System.Windows.Forms.ToolStripButton btnPaste;
     private System.Windows.Forms.ToolStripButton btnCommentOut;
     private System.Windows.Forms.ToolStripButton btnCommentIn;
-    private System.Windows.Forms.MenuItem btnEditUndo;
-    private System.Windows.Forms.MenuItem btnEditCopy;
+    private System.Windows.Forms.MenuStrip mmMain;
+    private System.Windows.Forms.ToolStripMenuItem btDTMain;
+    private System.Windows.Forms.ToolStripMenuItem btnDTNew;
+    private System.Windows.Forms.ToolStripMenuItem btnDTOpenLocal;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+    private System.Windows.Forms.ToolStripMenuItem btnDTSave;
+    private System.Windows.Forms.ToolStripMenuItem btnDTSaveLocal;
+    private System.Windows.Forms.ToolStripMenuItem btnDTSaveOnline;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+    private System.Windows.Forms.ToolStripMenuItem btnDTLogout;
+    private System.Windows.Forms.ToolStripMenuItem btnDTExit;
+    private System.Windows.Forms.ToolStripMenuItem btnDTOpenLua;
+    private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem btnEditUndo;
+    private System.Windows.Forms.ToolStripMenuItem btnEditRedo;
+    private System.Windows.Forms.ToolStripMenuItem btnEditCut;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+    private System.Windows.Forms.ToolStripMenuItem btnEditCopy;
+    private System.Windows.Forms.ToolStripMenuItem btnEditPaste;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+    private System.Windows.Forms.ToolStripMenuItem btnEditSelectAll;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+    private System.Windows.Forms.ToolStripMenuItem btnEditReplace;
+    private System.Windows.Forms.ToolStripMenuItem ansichtToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem btnViewSymbol;
+    private System.Windows.Forms.ToolStripMenuItem btnViewStatus;
+    private System.Windows.Forms.ToolStripMenuItem extrasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem btnExtraCManager;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+    private System.Windows.Forms.ToolStripMenuItem btnExtraOptions;
+    private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem btnHelpDokumentation;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+    private System.Windows.Forms.ToolStripMenuItem btnHelpReportError;
+    private System.Windows.Forms.ToolStripMenuItem btnHelpSearchUpdates;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+    private System.Windows.Forms.ToolStripMenuItem btnHelpInfo;
+    private System.Windows.Forms.ToolStripMenuItem btnHelpApi;
+    private System.Windows.Forms.ToolStripMenuItem btnHelpCommunity;
+    private System.Windows.Forms.StatusStrip barStatus;
+    private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+    private System.Windows.Forms.ToolStripMenuItem btnTest;
 
 
   }

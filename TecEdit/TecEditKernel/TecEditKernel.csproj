@@ -52,6 +52,12 @@
     <Compile Include="Controls\CtlEditorPane.Designer.cs">
       <DependentUpon>CtlEditorPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CtlFileExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlFileExplorer.Designer.cs">
+      <DependentUpon>CtlFileExplorer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CtlLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <EmbeddedResource Include="Controls\CtlEditorPane.resx">
       <DependentUpon>CtlEditorPane.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CtlFileExplorer.resx">
+      <DependentUpon>CtlFileExplorer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CtlLogin.resx">
       <DependentUpon>CtlLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +125,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_lua.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
