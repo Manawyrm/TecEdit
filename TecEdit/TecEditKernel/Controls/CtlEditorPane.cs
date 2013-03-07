@@ -72,5 +72,10 @@ namespace de.manawyrm.TecEdit.Kernel.Controls
     {
       return new ToolStripMenuItem(name, icon);
     }
+
+    private void tCEditor_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }

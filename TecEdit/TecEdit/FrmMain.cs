@@ -26,20 +26,10 @@ namespace de.manawyrm.TecEdit
       DialogResult = System.Windows.Forms.DialogResult.Abort;
     }
 
-    private void btnViewSymbol_Click(object sender, EventArgs e)
+    private void FrmMain_Load(object sender, EventArgs e)
     {
-      barSymbol.Visible = btnViewSymbol.Checked;
-    }
 
-    private void btnViewStatus_Click(object sender, EventArgs e)
-    {
-      barStatus.Visible = btnViewStatus.Checked;
     }
-
-    private void btnTest_Click(object sender, EventArgs e)
-    {
-      //TestFunktion nicht benutzen ist in Arbeit
-      //ctlFileExplorer1.LoadData(null);
-    }  
+  
   }
 }

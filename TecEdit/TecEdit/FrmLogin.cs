@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using de.manawyrm.TecEdit.Kernel;
 using de.manawyrm.TecEdit.Kernel.Http;
 using de.manawyrm.TecEdit.Kernel.Http.Interface;
+using de.manawyrm.TecEdit.Kernel.DataTypes;
 
 namespace de.manawyrm.TecEdit
 {
@@ -104,6 +105,11 @@ namespace de.manawyrm.TecEdit
 
       if(closeApp)
         Utility.CloseApplication();     
+    }
+
+    private void FrmLogin_Load(object sender, EventArgs e)
+    {
+
     }
   }
 }

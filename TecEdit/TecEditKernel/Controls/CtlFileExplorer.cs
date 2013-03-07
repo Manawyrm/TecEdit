@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using de.manawyrm.TecEdit.Kernel.Properties;
 using System.IO;
 using de.manawyrm.TecEdit.Kernel.Http;
-
+using de.manawyrm.TecEdit.Kernel.DataTypes;
 namespace de.manawyrm.TecEdit.Kernel.Controls
 {
   public partial class CtlFileExplorer : UserControl
