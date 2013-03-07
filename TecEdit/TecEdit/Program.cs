@@ -10,11 +10,15 @@ namespace de.manawyrm.TecEdit
     /// Der Haupteinstiegspunkt für die Anwendung.
     /// </summary>
     [STAThread]
-    static void Main()
+    static void Main(string[] args)
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new FrmLogin());
+
+      if (args != null && args.Length > 0 && args[0] == "-tester")
+        Application.Run(new FrmTest());
+      else
+        Application.Run(new FrmLogin());
     }
   }
 }

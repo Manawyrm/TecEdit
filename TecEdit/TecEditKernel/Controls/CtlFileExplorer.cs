@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using de.manawyrm.TecEdit.Kernel.Properties;
 using System.IO;
+using de.manawyrm.TecEdit.Kernel.Http;
 
 namespace de.manawyrm.TecEdit.Kernel.Controls
 {
@@ -25,12 +26,25 @@ namespace de.manawyrm.TecEdit.Kernel.Controls
       twIcons.Images.Add("folder", Resources.folder);
       twIcons.Images.Add("file", Resources.file_lua);
       tvFolderView.ImageList = twIcons;
+      Account ac = new Account("http://dummy.no-ip.info/tekkit/", "Dummy", "dummy");
+      HttpPostHelper h = new HttpPostHelper(ac);
+      h.PostCompleteRaw += h_PostCompleteRaw;
+      h.DoRequest(RequestType.GetFiles, "0", "", "");
+    }
+
+    void h_PostCompleteRaw(object sender, Http.Interface.BaseEvent<string> e)
+    {
+      DecodeData(e.Result);
+    }
+
+    private void DecodeData(string d)
+    {
+     
+      LoadData(d);
     }
 
     public void LoadData(object data)
     {
-      return;
-      //Nicht benutzen noch nicht ausgereifte idee eines file Folder Viewers
       string fPath = @"C:\Temp";
       TreeNode fowner = CreateTreenode("fo", null, fPath);
       TreeNode n = CreateView(fowner, fPath);

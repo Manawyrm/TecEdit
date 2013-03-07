@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using de.manawyrm.TecEdit.Kernel.Http.Interface;
+using de.manawyrm.TecEdit.Kernel.DataTypes;
 
 namespace de.manawyrm.TecEdit.Kernel.Http.ResultHelper
 {

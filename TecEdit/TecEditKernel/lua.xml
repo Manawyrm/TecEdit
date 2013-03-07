@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScintillaNET>
+	<Language Name="lua">
+		<AutoComplete FillUpCharacters=".([" SingleLineAccept="True" IsCaseSensitive="False">
+			<List>
+				and break do else elseif end false for function if 
+				in local nil not or repeat return then true until while
+				_VERSION assert collectgarbage dofile error gcinfo loadfile loadstring
+				print rawget rawset require tonumber tostring type unpack
+				assert collectgarbage dofile error gcinfo loadfile loadstring
+				print rawget rawset require tonumber tostring type unpack
+				_ALERT _ERRORMESSAGE _INPUT _PROMPT _OUTPUT 
+				_STDERR _STDIN _STDOUT call dostring foreach foreachi getn globals newtype
+				abs acos asin atan atan2 ceil cos deg exp 
+				floor format frexp gsub ldexp log log10 max min mod rad random randomseed 
+				sin sqrt strbyte strchar strfind strlen strlower strrep strsub strupper tan
+				string.byte string.char string.dump string.find string.len 
+				string.lower string.rep string.sub string.upper string.format string.gfind string.gsub 
+				table.concat table.foreach table.foreachi table.getn table.sort table.insert table.remove table.setn 
+				math.abs math.acos math.asin math.atan math.atan2 math.ceil math.cos math.deg math.exp 
+				math.floor math.frexp math.ldexp math.log math.log10 math.max math.min math.mod 
+				math.pi math.pow math.rad math.random math.randomseed math.sin math.sqrt math.tan 
+				string.gmatch string.match string.reverse table.maxn
+				math.cosh math.fmod math.modf math.sinh math.tanh math.huge
+				sort tinsert tremove
+			</List>
+		</AutoComplete>
+
+		<Indentation TabWidth="4" SmartIndentType="cpp" />
+			
+		
+		<Lexer LineCommentPrefix="--" StreamCommentPrefix="--[[ " StreamCommentSuffix=" ]]" >	
+			<Keywords List="0" Inherit="False">
+        and break do else elseif end false for function if
+        in local nil not or repeat return then true until while
+        _VERSION assert collectgarbage dofile error gcinfo loadfile loadstring
+        print rawget rawset require tonumber tostring type unpack
+        assert collectgarbage dofile error gcinfo loadfile loadstring
+        print rawget rawset require tonumber tostring type unpack
+        _ALERT _ERRORMESSAGE _INPUT _PROMPT _OUTPUT
+        _STDERR _STDIN _STDOUT call dostring foreach foreachi getn globals newtype
+        abs acos asin atan atan2 ceil cos deg exp
+        floor format frexp gsub ldexp log log10 max min mod rad random randomseed
+        sin sqrt strbyte strchar strfind strlen strlower strrep strsub strupper tan
+        string.byte string.char string.dump string.find string.len
+
+      </Keywords>
+      
+			<Keywords List="1" Inherit="False">
+
+        os os.version os.computerID os.getComputerLabel os.setComputerLabel
+        os.run os.loadAPI os.unloadAPI os.pullEvent os.pullEventRaw
+        os.queueEvent os.clock os.startTimer os.sleep os.time os.setAlarm os.shutdown os.reboot sleep
+
+        turtle turtle.craft turtle.forward turtle.back turtle.up turtle.down turtle.turnLeft turtle.turnRight
+        turtle.select turtle.getItemCount turtle.getItemSpace turtle.attack turtle.attackUp turtle.attackDown
+        turtle.dig turtle.digUp turtle.digDown turtle.place turtle.placeUp turtle.placeDown
+        turtle.detect turtle.detectUp turtle.detectDown turtle.compare turtle.compareUp turtle.compareDown
+        turtle.compareTo turtle.drop turtle.dropUp turtle.dropDown turtle.suck turtle.suckUp turtle.suckDown turtle.refuel
+        turtle.getFuelLevel
+
+        fs.list fs.exists fs.isDir fs.isReadOnly fs.getName fs.getDrive fs.getSize fs.makeDir fs.move fs.copy fs.delete fs.combine fs.open
+
+        rednet.open rednet.close rednet.announce rednet.send rednet.broadcast rednet.recieve
+
+        rs.getSides rs.getInput rs.setOutput rs.getOutput rs.getBundledInput rs.getBundledOutput rs.setBundledOutput rs.testBundledInput
+
+        colors.combine colors.subtract colors.test
+        colors.white colors.orange colors.magenta colors.lightBlue colors.yellow colors.lime colors.pink colors.gray colors.lightGray colors.cyan colors.purple colors.blue colors.brown colors.green colors.red colors.black
+
+        colours.combine colours.subtract colours.test
+        colours.white colours.orange colours.magenta colours.lightBlue colours.yellow colours.lime colours.pink colours.grey colours.lightGrey colours.cyan colours.purple colours.blue colours.brown colours.green colours.red colours.black
+
+        term.write term.clear term.clearLine term.print term.getCursorPos term.setCursorPos term.setCursorBlink term.getSize term.scroll term.redirect term.restore term.setTextScale
+
+
+        string.lower string.rep string.sub string.upper string.format string.gfind string.gsub
+        table.concat table.foreach table.foreachi table.getn table.sort table.insert table.remove table.setn
+        math.abs math.acos math.asin math.atan math.atan2 math.ceil math.cos math.deg math.exp
+        math.floor math.frexp math.ldexp math.log math.log10 math.max math.min math.mod
+        math.pi math.pow math.rad math.random math.randomseed math.sin math.sqrt math.tan
+        string.gmatch string.match string.reverse table.maxn
+        math.cosh math.fmod math.modf math.sinh math.tanh math.huge
+        sort tinsert tremove
+      </Keywords>
+      <Keywords List="2" Inherit="False">
+
+      </Keywords>
+		</Lexer>
+		<AutoComplete FillUpCharacters="" SingleLineAccept="True" IsCaseSensitive="False">
+		  <List>
+        boolean break catch const declare delay do else error exit false float for gosub goto if in int long null retry return string suspend throw true try var void while
+   
+      </List>
+		</AutoComplete>
+		<Snippets IsOneKeySelectionEmbedEnabled="True" IsEnabled="true">
+			<Snippet Shortcut="Status" IsSurroundsWith="true">[[$StatusMessage$]]</Snippet>
+			<Snippet Shortcut="If" IsSurroundsWith="true">
+			if ($end$) then
+			$DropMarker$$selected$}
+			end
+			</Snippet>
+			<Snippet Shortcut="IfElse" IsSurroundsWith="true">
+			if ($end$) then
+			$DropMarker$$selected$}
+			else
+			$DropMarker$$selected$}
+			end
+			</Snippet>
+		</Snippets>
+	</Language>
+</ScintillaNET> 
+

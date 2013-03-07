@@ -97,9 +97,10 @@
       this.btnHelpSearchUpdates = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
       this.btnHelpInfo = new System.Windows.Forms.ToolStripMenuItem();
+      this.btnTest = new System.Windows.Forms.ToolStripMenuItem();
       this.barStatus = new System.Windows.Forms.StatusStrip();
       this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-      this.btnTest = new System.Windows.Forms.ToolStripMenuItem();
+      this.ctlEditorPane1 = new de.manawyrm.TecEdit.Kernel.Controls.CtlEditorPane();
       this.barSymbol.SuspendLayout();
       this.mmMain.SuspendLayout();
       this.barStatus.SuspendLayout();
@@ -646,6 +647,13 @@
       this.btnHelpInfo.Size = new System.Drawing.Size(189, 22);
       this.btnHelpInfo.Text = "Info...";
       // 
+      // btnTest
+      // 
+      this.btnTest.Name = "btnTest";
+      this.btnTest.Size = new System.Drawing.Size(76, 20);
+      this.btnTest.Text = "TESTFUNC";
+      this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+      // 
       // barStatus
       // 
       this.barStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -661,18 +669,20 @@
       this.lblStatus.Size = new System.Drawing.Size(52, 17);
       this.lblStatus.Text = "lblStatus";
       // 
-      // btnTest
+      // ctlEditorPane1
       // 
-      this.btnTest.Name = "btnTest";
-      this.btnTest.Size = new System.Drawing.Size(76, 20);
-      this.btnTest.Text = "TESTFUNC";
-      this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+      this.ctlEditorPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.ctlEditorPane1.Location = new System.Drawing.Point(0, 49);
+      this.ctlEditorPane1.Name = "ctlEditorPane1";
+      this.ctlEditorPane1.Size = new System.Drawing.Size(852, 264);
+      this.ctlEditorPane1.TabIndex = 10;
       // 
       // FrmMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(852, 335);
+      this.Controls.Add(this.ctlEditorPane1);
       this.Controls.Add(this.barStatus);
       this.Controls.Add(this.barSymbol);
       this.Controls.Add(this.mmMain);
@@ -765,6 +775,7 @@
     private System.Windows.Forms.StatusStrip barStatus;
     private System.Windows.Forms.ToolStripStatusLabel lblStatus;
     private System.Windows.Forms.ToolStripMenuItem btnTest;
+    private Kernel.Controls.CtlEditorPane ctlEditorPane1;
 
 
   }
