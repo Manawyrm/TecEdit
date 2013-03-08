@@ -134,7 +134,6 @@
             this.MinimumSize = new System.Drawing.Size(287, 256);
             this.Name = "CtlLogin";
             this.Size = new System.Drawing.Size(287, 256);
-            this.Load += new System.EventHandler(this.CtlLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eProvider)).EndInit();
             this.ResumeLayout(false);

@@ -38,6 +38,7 @@
       this.ctlEditorPane1.Name = "ctlEditorPane1";
       this.ctlEditorPane1.Size = new System.Drawing.Size(583, 395);
       this.ctlEditorPane1.TabIndex = 0;
+      this.ctlEditorPane1.Click += new System.EventHandler(this.ctlEditorPane1_Click);
       // 
       // FrmTest
       // 

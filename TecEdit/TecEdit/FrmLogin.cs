@@ -19,7 +19,7 @@ namespace de.manawyrm.TecEdit
 
     public FrmLogin()
     {
-      InitializeComponent();      
+      InitializeComponent();
     }
 
     protected override void OnShown(EventArgs e)
@@ -59,13 +59,19 @@ namespace de.manawyrm.TecEdit
       }
     }
 
-    void mLoginTester_PostCompleteRaw(object sender, BaseEvent<string> e)
+    void mLoginTester_PostCompleteLogin(object sender, BaseEvent<LoginState> e)
     {
-      if (e.HasError)
-        MessageBox.Show(e.ErrorMessage);
-
-      if (e.Result == "1")
-        Start();
+      try
+      {
+        if (e.Result == LoginState.Accepted)
+          Start();
+        else if (e.Result == LoginState.Denied)
+          MessageBox.Show("Falsche login daten");
+      }
+      catch (Exception ex)
+      {
+        ExeptionLogger.Log(ex);
+      }
     }
 
     private void Start()
@@ -91,7 +97,7 @@ namespace de.manawyrm.TecEdit
       if (mLoginTester == null)
       {
         mLoginTester = new HttpPostHelper(ac);
-        mLoginTester.PostCompleteRaw += mLoginTester_PostCompleteRaw;
+        mLoginTester.PostCompleteLogin += mLoginTester_PostCompleteLogin;
       }
     }
 
@@ -99,17 +105,12 @@ namespace de.manawyrm.TecEdit
     {
       if (mLoginTester != null)
       {
-        mLoginTester.PostCompleteRaw -= mLoginTester_PostCompleteRaw;
+        mLoginTester.PostCompleteLogin -= mLoginTester_PostCompleteLogin;
         mLoginTester = null;
       }
 
-      if(closeApp)
-        Utility.CloseApplication();     
-    }
-
-    private void FrmLogin_Load(object sender, EventArgs e)
-    {
-
+      if (closeApp)
+        Utility.CloseApplication();
     }
   }
 }

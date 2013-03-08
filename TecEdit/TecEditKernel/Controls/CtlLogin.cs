@@ -106,10 +106,5 @@ namespace de.manawyrm.TecEdit.Kernel.Controls
         state = false;
       return state;
     }
-
-    private void CtlLogin_Load(object sender, EventArgs e)
-    {
-
-    }
   }
 }

@@ -86,7 +86,23 @@ namespace de.manawyrm.TecEdit.Kernel
   {
     public SettingsFile()
     {
-      mAccount = new Account("http://teccraft.de/tecedit/", "", "");
+      mAccount = new Account(Constants.DefaultURL, "", "");
+      ShowStatusbar = true;
+      ShowSymbolBar = true;
+    }
+
+    private bool mShowSymbolBar;
+    public bool ShowSymbolBar
+    {
+      get { return mShowSymbolBar; }
+      set { mShowSymbolBar = value; }
+    }
+
+    private bool mShowStatusbar;
+    public bool ShowStatusbar
+    {
+      get { return mShowStatusbar; }
+      set { mShowStatusbar = value; }
     }
 
     private Account mAccount;
@@ -97,4 +113,3 @@ namespace de.manawyrm.TecEdit.Kernel
     }
   }
 }
-

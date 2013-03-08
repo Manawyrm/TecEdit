@@ -41,7 +41,6 @@
         this.tCEditor.SelectedIndex = 0;
         this.tCEditor.Size = new System.Drawing.Size(186, 138);
         this.tCEditor.TabIndex = 0;
-        this.tCEditor.SelectedIndexChanged += new System.EventHandler(this.tCEditor_SelectedIndexChanged);
         // 
         // CtlEditorPane
         // 

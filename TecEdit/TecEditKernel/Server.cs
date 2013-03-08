@@ -10,34 +10,6 @@ namespace de.manawyrm.TecEdit.Kernel
 {
   public class Server
   {
-    public event EventHandler<EventArgs> UNUSED;
-    protected virtual void OnUNUSED(EventArgs e)
-    {
-      if (UNUSED != null)
-      {
-        foreach (EventHandler singleCast in UNUSED.GetInvocationList())
-        {
-          ISynchronizeInvoke syncInvoke = singleCast.Target as ISynchronizeInvoke;
-          try
-          {
-            if (syncInvoke != null && syncInvoke.InvokeRequired)
-              syncInvoke.Invoke(UNUSED, new object[] { this, e });
-            else
-              singleCast(this, e);
-          }
-          catch (Exception ex)
-          {
-            ExeptionLogger.Log(ex);
-          }
-        }
-      }
-    }
-
-    private void RaiseEvent()
-    {
-      OnUNUSED(new EventArgs());
-    }
-
     private Account mAccount;
 
     public Server(Account ac)
@@ -45,7 +17,7 @@ namespace de.manawyrm.TecEdit.Kernel
       if (ac != null && ac.HasLogin && ac.HasURL)
         mAccount = ac;
       else
-        throw new InvalidOperationException("User nicht gesetzt in Config");
+        throw new InvalidOperationException(Constants.EC_UserNotFound);
     }
 
     public bool ServerIsOnline

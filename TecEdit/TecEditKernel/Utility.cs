@@ -10,12 +10,6 @@ namespace de.manawyrm.TecEdit.Kernel
 {
   public static class Utility
   {
-    public static void APIHelpClicked(object sender, EventArgs e)
-    {
-        //Universeller Handler für Buttons oder Menüeinträge, die eine URL öffnen sollen.
-        //Diese müssen lediglich die URL als String im Tag haben.
-        Utility.OpenBrowser((string)((MenuItem)sender).Tag);
-    }
     public static void OpenBrowser(string url)
     {
       try
@@ -37,7 +31,30 @@ namespace de.manawyrm.TecEdit.Kernel
 
     public static string SettingsFilePath
     {
-      get { return Path.Combine(Application.StartupPath, "conf"); }
+      get { return Path.Combine(Application.StartupPath, Constants.SettingsFileName); }
+    }
+
+    public static long CalculateFileSize(string fContent)
+    {
+      return new ASCIIEncoding().GetBytes(fContent).Length;
+    }
+
+    public static string BytesToFormattedString(long bytes)
+    {
+      double s = bytes;
+      string[] format = new string[]
+                  {
+                      "{0} bytes", "{0} KB",  
+                      "{0} MB", "{0} GB", "{0} TB", "{0} PB", "{0} EB"
+                  };
+
+      int i = 0;
+      while (i < format.Length && s >= 1024)
+      {
+        s = (long)(100 * s / 1024) / 100.0;
+        i++;
+      }
+      return string.Format(format[i], s);
     }
   }
 }

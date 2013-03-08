@@ -31,7 +31,7 @@ namespace de.manawyrm.TecEdit.Kernel.Http
     public event EventHandler<BaseEvent<string>> PostCompleteRaw;
 
     public event EventHandler<BaseEvent<List<Account>>> PostCompleteGetAllUser;
-    public event EventHandler<BaseEvent<string>> PostCompleteGetPCDescription;
+    public event EventHandler<BaseEvent<LoginState>> PostCompleteLogin;
 
     protected virtual void OnPostCompleteRaw(BaseEvent<string> result)
     {
@@ -92,7 +92,7 @@ namespace de.manawyrm.TecEdit.Kernel.Http
 
     public void ReportBug(string name, string bugDescription, string mail, string type)
     {
-      HttpPost p = new HttpPost("http://tbspace.de/tecedit/reportbug.php");
+      HttpPost p = new HttpPost(Constants.DefaultReportURL);
       RegisterEventHandler(p);
       PostParamCollection col = new PostParamCollection();
       col.Add(new PostParameters("name", name));
@@ -104,13 +104,13 @@ namespace de.manawyrm.TecEdit.Kernel.Http
 
     private void DoLogin(PostParamCollection parameters)
     {
-      HttpPost p = CreatePostHandler("login.php");
+      HttpPost p = CreatePostHandler(Constants.php_Login);
       p.Post(RequestType.Login.ToString(), parameters);
     }
 
     private void DoSetDescription(PostParamCollection parameters, string pcID, string desc)
     {
-      HttpPost p = CreatePostHandler("setdesc.php");
+      HttpPost p = CreatePostHandler(Constants.php_SetPCDescription);
       parameters.Add(new PostParameters("id", pcID));
       parameters.Add(new PostParameters("desc", desc));
       p.Post(RequestType.SetPCDescription.ToString(), parameters);
@@ -118,14 +118,14 @@ namespace de.manawyrm.TecEdit.Kernel.Http
 
     private void DoGetPCUsers(PostParamCollection parameters, string pcID)
     {
-      HttpPost p = CreatePostHandler("getuser.php");
+      HttpPost p = CreatePostHandler(Constants.php_GetAllUserPC);
       parameters.Add(new PostParameters("id", pcID));
       p.Post(RequestType.GetAllUserPC.ToString(), parameters);
     }
 
     private void DoRemovePCUser(PostParamCollection parameters, string pcID, string user)
     {
-      HttpPost p = CreatePostHandler("deregister.php");
+      HttpPost p = CreatePostHandler(Constants.php_RemovePCUser);
       parameters.Add(new PostParameters("id", pcID));
       parameters.Add(new PostParameters("target", user));
       p.Post(RequestType.RemovePCUser.ToString(), parameters);
@@ -133,20 +133,20 @@ namespace de.manawyrm.TecEdit.Kernel.Http
 
     private void DoGetComputerFromUser(PostParamCollection parameters)
     {
-      HttpPost p = CreatePostHandler("getcomputer.php");
+      HttpPost p = CreatePostHandler(Constants.php_GetAllComputer);
       p.Post(RequestType.GetAllComputer.ToString(), parameters);
     }
 
     private void DoGetFiles(PostParamCollection parameters, string pcID)
     {
-      HttpPost p = CreatePostHandler("getfiles.php");
+      HttpPost p = CreatePostHandler(Constants.php_GetFiles);
       parameters.Add(new PostParameters("id", pcID));
       p.Post(RequestType.GetFiles.ToString(), parameters);
     }
 
     private void DoUploadFileContent(PostParamCollection parameters, string pcID, string file, string b64Data)
     {
-      HttpPost p = CreatePostHandler("setcontent.php");
+      HttpPost p = CreatePostHandler(Constants.php_SetContent);
       parameters.Add(new PostParameters("id", pcID));
       parameters.Add(new PostParameters("file", file));
       parameters.Add(new PostParameters("content", b64Data));
@@ -155,7 +155,7 @@ namespace de.manawyrm.TecEdit.Kernel.Http
 
     private void DoDownloadFileContent(PostParamCollection parameters, string pcID, string file)
     {
-      HttpPost p = CreatePostHandler("setcontent.php");
+      HttpPost p = CreatePostHandler(Constants.php_GetContent);
       parameters.Add(new PostParameters("id", pcID));
       parameters.Add(new PostParameters("file", file));
       p.Post(RequestType.GetContent.ToString(), parameters);
@@ -192,7 +192,7 @@ namespace de.manawyrm.TecEdit.Kernel.Http
       switch (r.RequestTyp)
       {
         case RequestType.Login:
-
+          OnPostCompleteLogin(new LoginPostResult(r.Result, r.ErrorMessage, r.PostRequest));
           break;
         case RequestType.GetAllComputer:
 
@@ -223,10 +223,10 @@ namespace de.manawyrm.TecEdit.Kernel.Http
       if (PostCompleteGetAllUser != null)
         PostCompleteGetAllUser(this, result);
     }
-    protected virtual void OnPostCompleteGetPCDescription(BaseEvent<string> result)
+    protected virtual void OnPostCompleteLogin(BaseEvent<LoginState> result)
     {
-        if (PostCompleteGetPCDescription != null)
-            PostCompleteGetPCDescription(this, result);
+      if (PostCompleteLogin != null)
+        PostCompleteLogin(this, result);
     }
 
     private PostParamCollection GetLoginParams(Account ac)

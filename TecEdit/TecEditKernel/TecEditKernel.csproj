@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Controls\CtlEditorPane.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,20 +75,25 @@
       <DependentUpon>CtlReport.cs</DependentUpon>
     </Compile>
     <Compile Include="DataTypes\Account.cs" />
+    <Compile Include="DataTypes\Enums.cs" />
+    <Compile Include="DataTypes\Interface\IFileSystemObject.cs" />
     <Compile Include="DataTypes\TecEditFile.cs" />
+    <Compile Include="DataTypes\TecEditFolder.cs" />
     <Compile Include="ExeptionLogger.cs" />
     <Compile Include="Http\ResultHelper\GetUserPostResult.cs" />
     <Compile Include="Http\HttpPostHelper.cs" />
     <Compile Include="Http\Interface\BaseEvent.cs" />
+    <Compile Include="Http\ResultHelper\LoginPostResult.cs" />
     <Compile Include="Http\ResultHelper\RawResult.cs" />
     <Compile Include="Http\Interface\IPostResult.cs" />
-    <Compile Include="Http\ResultHelper\GetPCDescriptionResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ScintillaUtils\AutoCompleteHelper.cs" />
+    <Compile Include="ScintillaUtils\AutoCompleteUpdater.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Utility.cs" />
