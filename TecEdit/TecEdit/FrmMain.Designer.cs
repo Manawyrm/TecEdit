@@ -63,29 +63,6 @@
         this.HilfeMenuItem = new System.Windows.Forms.MenuItem();
         this.MenuItem11 = new System.Windows.Forms.MenuItem();
         this.MenuItem14 = new System.Windows.Forms.MenuItem();
-        this.MenuItem15 = new System.Windows.Forms.MenuItem();
-        this.MenuItem16 = new System.Windows.Forms.MenuItem();
-        this.MenuItem17 = new System.Windows.Forms.MenuItem();
-        this.MenuItem18 = new System.Windows.Forms.MenuItem();
-        this.MenuItem19 = new System.Windows.Forms.MenuItem();
-        this.MenuItem20 = new System.Windows.Forms.MenuItem();
-        this.MenuItem21 = new System.Windows.Forms.MenuItem();
-        this.MenuItem22 = new System.Windows.Forms.MenuItem();
-        this.MenuItem23 = new System.Windows.Forms.MenuItem();
-        this.MenuItem24 = new System.Windows.Forms.MenuItem();
-        this.MenuItem25 = new System.Windows.Forms.MenuItem();
-        this.MenuItem26 = new System.Windows.Forms.MenuItem();
-        this.MenuItem27 = new System.Windows.Forms.MenuItem();
-        this.MenuItem28 = new System.Windows.Forms.MenuItem();
-        this.MenuItem29 = new System.Windows.Forms.MenuItem();
-        this.MenuItem30 = new System.Windows.Forms.MenuItem();
-        this.MenuItem31 = new System.Windows.Forms.MenuItem();
-        this.MenuItem32 = new System.Windows.Forms.MenuItem();
-        this.MenuItem33 = new System.Windows.Forms.MenuItem();
-        this.MenuItem34 = new System.Windows.Forms.MenuItem();
-        this.MenuItem35 = new System.Windows.Forms.MenuItem();
-        this.MenuItem36 = new System.Windows.Forms.MenuItem();
-        this.MenuItem37 = new System.Windows.Forms.MenuItem();
         this.MenuItem38 = new System.Windows.Forms.MenuItem();
         this.MenuItem39 = new System.Windows.Forms.MenuItem();
         this.MenuItem13 = new System.Windows.Forms.MenuItem();
@@ -341,146 +318,7 @@
         // MenuItem14
         // 
         this.MenuItem14.Index = 0;
-        this.MenuItem14.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MenuItem15,
-            this.MenuItem16,
-            this.MenuItem17,
-            this.MenuItem18,
-            this.MenuItem19,
-            this.MenuItem20,
-            this.MenuItem21,
-            this.MenuItem22,
-            this.MenuItem23,
-            this.MenuItem24,
-            this.MenuItem25,
-            this.MenuItem26,
-            this.MenuItem27,
-            this.MenuItem28,
-            this.MenuItem29,
-            this.MenuItem30,
-            this.MenuItem31,
-            this.MenuItem32,
-            this.MenuItem33,
-            this.MenuItem34,
-            this.MenuItem35,
-            this.MenuItem36,
-            this.MenuItem37});
         this.MenuItem14.Text = "APIs";
-        // 
-        // MenuItem15
-        // 
-        this.MenuItem15.Index = 0;
-        this.MenuItem15.Text = "Bit";
-        // 
-        // MenuItem16
-        // 
-        this.MenuItem16.Index = 1;
-        this.MenuItem16.Text = "Colors";
-        // 
-        // MenuItem17
-        // 
-        this.MenuItem17.Index = 2;
-        this.MenuItem17.Text = "Coroutine";
-        // 
-        // MenuItem18
-        // 
-        this.MenuItem18.Index = 3;
-        this.MenuItem18.Text = "Disk";
-        // 
-        // MenuItem19
-        // 
-        this.MenuItem19.Index = 4;
-        this.MenuItem19.Text = "Fs";
-        // 
-        // MenuItem20
-        // 
-        this.MenuItem20.Index = 5;
-        this.MenuItem20.Text = "Gps";
-        // 
-        // MenuItem21
-        // 
-        this.MenuItem21.Index = 6;
-        this.MenuItem21.Text = "Help";
-        // 
-        // MenuItem22
-        // 
-        this.MenuItem22.Index = 7;
-        this.MenuItem22.Text = "HTTP";
-        // 
-        // MenuItem23
-        // 
-        this.MenuItem23.Index = 8;
-        this.MenuItem23.Text = "IO";
-        // 
-        // MenuItem24
-        // 
-        this.MenuItem24.Index = 9;
-        this.MenuItem24.Text = "Math";
-        // 
-        // MenuItem25
-        // 
-        this.MenuItem25.Index = 10;
-        this.MenuItem25.Text = "OS";
-        // 
-        // MenuItem26
-        // 
-        this.MenuItem26.Index = 11;
-        this.MenuItem26.Text = "Paintutils";
-        // 
-        // MenuItem27
-        // 
-        this.MenuItem27.Index = 12;
-        this.MenuItem27.Text = "Parallel";
-        // 
-        // MenuItem28
-        // 
-        this.MenuItem28.Index = 13;
-        this.MenuItem28.Text = "Peripheral";
-        // 
-        // MenuItem29
-        // 
-        this.MenuItem29.Index = 14;
-        this.MenuItem29.Text = "Rednet";
-        // 
-        // MenuItem30
-        // 
-        this.MenuItem30.Index = 15;
-        this.MenuItem30.Text = "Redstone";
-        // 
-        // MenuItem31
-        // 
-        this.MenuItem31.Index = 16;
-        this.MenuItem31.Text = "Shell";
-        // 
-        // MenuItem32
-        // 
-        this.MenuItem32.Index = 17;
-        this.MenuItem32.Text = "String";
-        // 
-        // MenuItem33
-        // 
-        this.MenuItem33.Index = 18;
-        this.MenuItem33.Text = "Table";
-        // 
-        // MenuItem34
-        // 
-        this.MenuItem34.Index = 19;
-        this.MenuItem34.Text = "Term";
-        // 
-        // MenuItem35
-        // 
-        this.MenuItem35.Index = 20;
-        this.MenuItem35.Text = "Textutils";
-        // 
-        // MenuItem36
-        // 
-        this.MenuItem36.Index = 21;
-        this.MenuItem36.Text = "Turtle";
-        // 
-        // MenuItem37
-        // 
-        this.MenuItem37.Index = 22;
-        this.MenuItem37.Text = "Vector";
         // 
         // MenuItem38
         // 
@@ -824,29 +662,6 @@
     private System.Windows.Forms.MenuItem HilfeMenuItem;
     private System.Windows.Forms.MenuItem MenuItem11;
     private System.Windows.Forms.MenuItem MenuItem14;
-    private System.Windows.Forms.MenuItem MenuItem15;
-    private System.Windows.Forms.MenuItem MenuItem16;
-    private System.Windows.Forms.MenuItem MenuItem17;
-    private System.Windows.Forms.MenuItem MenuItem18;
-    private System.Windows.Forms.MenuItem MenuItem19;
-    private System.Windows.Forms.MenuItem MenuItem20;
-    private System.Windows.Forms.MenuItem MenuItem21;
-    private System.Windows.Forms.MenuItem MenuItem22;
-    private System.Windows.Forms.MenuItem MenuItem23;
-    private System.Windows.Forms.MenuItem MenuItem24;
-    private System.Windows.Forms.MenuItem MenuItem25;
-    private System.Windows.Forms.MenuItem MenuItem26;
-    private System.Windows.Forms.MenuItem MenuItem27;
-    private System.Windows.Forms.MenuItem MenuItem28;
-    private System.Windows.Forms.MenuItem MenuItem29;
-    private System.Windows.Forms.MenuItem MenuItem30;
-    private System.Windows.Forms.MenuItem MenuItem31;
-    private System.Windows.Forms.MenuItem MenuItem32;
-    private System.Windows.Forms.MenuItem MenuItem33;
-    private System.Windows.Forms.MenuItem MenuItem34;
-    private System.Windows.Forms.MenuItem MenuItem35;
-    private System.Windows.Forms.MenuItem MenuItem36;
-    private System.Windows.Forms.MenuItem MenuItem37;
     private System.Windows.Forms.MenuItem MenuItem38;
     private System.Windows.Forms.MenuItem MenuItem39;
     private System.Windows.Forms.MenuItem MenuItem13;

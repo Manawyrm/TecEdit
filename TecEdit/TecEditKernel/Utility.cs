@@ -10,6 +10,12 @@ namespace de.manawyrm.TecEdit.Kernel
 {
   public static class Utility
   {
+    public static void APIHelpClicked(object sender, EventArgs e)
+    {
+        //Universeller Handler für Buttons oder Menüeinträge, die eine URL öffnen sollen.
+        //Diese müssen lediglich die URL als String im Tag haben.
+        Utility.OpenBrowser((string)((MenuItem)sender).Tag);
+    }
     public static void OpenBrowser(string url)
     {
       try
