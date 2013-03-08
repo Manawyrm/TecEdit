@@ -34,13 +34,15 @@
             this.llteccraft = new System.Windows.Forms.LinkLabel();
             this.lltbSpace = new System.Windows.Forms.LinkLabel();
             this.ctlLogin1 = new de.manawyrm.TecEdit.Kernel.Controls.CtlLogin();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(363, 274);
+            this.btnCancel.Location = new System.Drawing.Point(365, 11);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(99, 28);
             this.btnCancel.TabIndex = 2;
@@ -52,7 +54,7 @@
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(258, 274);
+            this.btnOK.Location = new System.Drawing.Point(260, 11);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(99, 28);
             this.btnOK.TabIndex = 1;
@@ -63,7 +65,7 @@
             // llteccraft
             // 
             this.llteccraft.AutoSize = true;
-            this.llteccraft.Location = new System.Drawing.Point(47, 289);
+            this.llteccraft.Location = new System.Drawing.Point(45, 24);
             this.llteccraft.Name = "llteccraft";
             this.llteccraft.Size = new System.Drawing.Size(73, 13);
             this.llteccraft.TabIndex = 3;
@@ -74,7 +76,7 @@
             // lltbSpace
             // 
             this.lltbSpace.AutoSize = true;
-            this.lltbSpace.Location = new System.Drawing.Point(9, 276);
+            this.lltbSpace.Location = new System.Drawing.Point(7, 11);
             this.lltbSpace.Name = "lltbSpace";
             this.lltbSpace.Size = new System.Drawing.Size(111, 13);
             this.lltbSpace.TabIndex = 4;
@@ -87,34 +89,46 @@
             this.ctlLogin1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctlLogin1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ctlLogin1.BackColor = System.Drawing.Color.Transparent;
             this.ctlLogin1.Location = new System.Drawing.Point(12, 12);
             this.ctlLogin1.MinimumSize = new System.Drawing.Size(287, 256);
             this.ctlLogin1.Name = "ctlLogin1";
             this.ctlLogin1.Size = new System.Drawing.Size(450, 256);
             this.ctlLogin1.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lltbSpace);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnOK);
+            this.panel1.Controls.Add(this.llteccraft);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 264);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(474, 50);
+            this.panel1.TabIndex = 5;
+            // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(474, 314);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ctlLogin1);
-            this.Controls.Add(this.lltbSpace);
-            this.Controls.Add(this.llteccraft);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.btnCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TecEdit - Anmeldung";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -125,6 +139,7 @@
         private System.Windows.Forms.LinkLabel llteccraft;
         private System.Windows.Forms.LinkLabel lltbSpace;
         private Kernel.Controls.CtlLogin ctlLogin1;
+        private System.Windows.Forms.Panel panel1;
 
     }
 }
