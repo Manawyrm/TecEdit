@@ -61,17 +61,25 @@ namespace de.manawyrm.TecEdit
     };
     void BuildAPIMenu()
     {
-      
-        MenuItem14.MenuItems.Clear();
+        APIMenuItem.MenuItems.Clear();
         foreach (var item in APIs)
 	    {
             MenuItem newitem = new MenuItem(item.Key, Utility.APIHelpClicked);
             newitem.Tag = item.Value;
-            MenuItem14.MenuItems.Add(newitem);
+            APIMenuItem.MenuItems.Add(newitem);
 	    }
-
     }
-  
 
+    private void btnViewSymbolBar_Click(object sender, EventArgs e)
+    {
+        btnViewSymbolBar.Checked = !btnViewSymbolBar.Checked;
+        tsMain.Visible = btnViewSymbolBar.Checked;
+    }
+
+    private void btnViewStatebar_Click(object sender, EventArgs e)
+    {
+        btnViewStatebar.Checked = !btnViewStatebar.Checked;
+        ssMain.Visible = btnViewStatebar.Checked;
+    }
   }
 }

@@ -62,7 +62,7 @@
         this.btnExtOption = new System.Windows.Forms.MenuItem();
         this.HilfeMenuItem = new System.Windows.Forms.MenuItem();
         this.MenuItem11 = new System.Windows.Forms.MenuItem();
-        this.MenuItem14 = new System.Windows.Forms.MenuItem();
+        this.APIMenuItem = new System.Windows.Forms.MenuItem();
         this.MenuItem38 = new System.Windows.Forms.MenuItem();
         this.MenuItem39 = new System.Windows.Forms.MenuItem();
         this.MenuItem13 = new System.Windows.Forms.MenuItem();
@@ -100,8 +100,15 @@
         this.btnCommentOut = new System.Windows.Forms.ToolStripButton();
         this.btnCommentIn = new System.Windows.Forms.ToolStripButton();
         this.vistaMenu1 = new wyDay.Controls.VistaMenu(this.components);
+        this.ssMain = new System.Windows.Forms.StatusStrip();
+        this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+        this.tsMainContainer = new System.Windows.Forms.ToolStripContainer();
         this.tsMain.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)(this.vistaMenu1)).BeginInit();
+        this.ssMain.SuspendLayout();
+        this.tsMainContainer.BottomToolStripPanel.SuspendLayout();
+        this.tsMainContainer.TopToolStripPanel.SuspendLayout();
+        this.tsMainContainer.SuspendLayout();
         this.SuspendLayout();
         // 
         // mmMain
@@ -263,12 +270,14 @@
         this.btnViewSymbolBar.Checked = true;
         this.btnViewSymbolBar.Index = 0;
         this.btnViewSymbolBar.Text = "Symbolleiste";
+        this.btnViewSymbolBar.Click += new System.EventHandler(this.btnViewSymbolBar_Click);
         // 
         // btnViewStatebar
         // 
         this.btnViewStatebar.Checked = true;
         this.btnViewStatebar.Index = 1;
         this.btnViewStatebar.Text = "Statusleiste";
+        this.btnViewStatebar.Click += new System.EventHandler(this.btnViewStatebar_Click);
         // 
         // ExtrasMenuItem
         // 
@@ -311,14 +320,14 @@
         // 
         this.MenuItem11.Index = 0;
         this.MenuItem11.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.MenuItem14,
+            this.APIMenuItem,
             this.MenuItem38});
         this.MenuItem11.Text = "Dokumentationen";
         // 
-        // MenuItem14
+        // APIMenuItem
         // 
-        this.MenuItem14.Index = 0;
-        this.MenuItem14.Text = "APIs";
+        this.APIMenuItem.Index = 0;
+        this.APIMenuItem.Text = "APIs";
         // 
         // MenuItem38
         // 
@@ -505,7 +514,7 @@
         // 
         // tsMain
         // 
-        this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+        this.tsMain.Dock = System.Windows.Forms.DockStyle.Fill;
         this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNewFile,
             this.btnOpen,
@@ -517,9 +526,9 @@
             this.toolStripSeparator3,
             this.btnCommentOut,
             this.btnCommentIn});
-        this.tsMain.Location = new System.Drawing.Point(0, 0);
+        this.tsMain.Location = new System.Drawing.Point(3, 0);
         this.tsMain.Name = "tsMain";
-        this.tsMain.Size = new System.Drawing.Size(852, 25);
+        this.tsMain.Size = new System.Drawing.Size(239, 25);
         this.tsMain.TabIndex = 7;
         this.tsMain.Text = "ToolStrip";
         // 
@@ -609,12 +618,50 @@
         // 
         this.vistaMenu1.ContainerControl = this;
         // 
+        // ssMain
+        // 
+        this.ssMain.Dock = System.Windows.Forms.DockStyle.None;
+        this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+        this.ssMain.Location = new System.Drawing.Point(0, 0);
+        this.ssMain.Name = "ssMain";
+        this.ssMain.Size = new System.Drawing.Size(852, 22);
+        this.ssMain.TabIndex = 8;
+        this.ssMain.Text = "statusStrip1";
+        // 
+        // toolStripStatusLabel1
+        // 
+        this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+        this.toolStripStatusLabel1.Size = new System.Drawing.Size(22, 17);
+        this.toolStripStatusLabel1.Text = "42.";
+        // 
+        // tsMainContainer
+        // 
+        // 
+        // tsMainContainer.BottomToolStripPanel
+        // 
+        this.tsMainContainer.BottomToolStripPanel.Controls.Add(this.ssMain);
+        // 
+        // tsMainContainer.ContentPanel
+        // 
+        this.tsMainContainer.ContentPanel.Size = new System.Drawing.Size(852, 288);
+        this.tsMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+        this.tsMainContainer.Location = new System.Drawing.Point(0, 0);
+        this.tsMainContainer.Name = "tsMainContainer";
+        this.tsMainContainer.Size = new System.Drawing.Size(852, 335);
+        this.tsMainContainer.TabIndex = 9;
+        this.tsMainContainer.Text = "toolStripContainer1";
+        // 
+        // tsMainContainer.TopToolStripPanel
+        // 
+        this.tsMainContainer.TopToolStripPanel.Controls.Add(this.tsMain);
+        // 
         // FrmMain
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(852, 335);
-        this.Controls.Add(this.tsMain);
+        this.Controls.Add(this.tsMainContainer);
         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         this.Menu = this.mmMain;
         this.Name = "FrmMain";
@@ -624,8 +671,15 @@
         this.tsMain.ResumeLayout(false);
         this.tsMain.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)(this.vistaMenu1)).EndInit();
+        this.ssMain.ResumeLayout(false);
+        this.ssMain.PerformLayout();
+        this.tsMainContainer.BottomToolStripPanel.ResumeLayout(false);
+        this.tsMainContainer.BottomToolStripPanel.PerformLayout();
+        this.tsMainContainer.TopToolStripPanel.ResumeLayout(false);
+        this.tsMainContainer.TopToolStripPanel.PerformLayout();
+        this.tsMainContainer.ResumeLayout(false);
+        this.tsMainContainer.PerformLayout();
         this.ResumeLayout(false);
-        this.PerformLayout();
 
     }
 
@@ -661,7 +715,7 @@
     private System.Windows.Forms.MenuItem btnExtOption;
     private System.Windows.Forms.MenuItem HilfeMenuItem;
     private System.Windows.Forms.MenuItem MenuItem11;
-    private System.Windows.Forms.MenuItem MenuItem14;
+    private System.Windows.Forms.MenuItem APIMenuItem;
     private System.Windows.Forms.MenuItem MenuItem38;
     private System.Windows.Forms.MenuItem MenuItem39;
     private System.Windows.Forms.MenuItem MenuItem13;
@@ -701,6 +755,9 @@
     private System.Windows.Forms.MenuItem btnEditUndo;
     private System.Windows.Forms.MenuItem btnEditCopy;
     private wyDay.Controls.VistaMenu vistaMenu1;
+    private System.Windows.Forms.StatusStrip ssMain;
+    private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+    private System.Windows.Forms.ToolStripContainer tsMainContainer;
 
 
   }
