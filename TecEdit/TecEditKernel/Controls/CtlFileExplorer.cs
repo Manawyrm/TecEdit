@@ -10,6 +10,7 @@ using de.manawyrm.TecEdit.Kernel.Properties;
 using System.IO;
 using de.manawyrm.TecEdit.Kernel.Http;
 using de.manawyrm.TecEdit.Kernel.DataTypes;
+using de.manawyrm.TecEdit.Kernel.DataTypes.Interface;
 namespace de.manawyrm.TecEdit.Kernel.Controls
 {
   public partial class CtlFileExplorer : UserControl
@@ -20,76 +21,136 @@ namespace de.manawyrm.TecEdit.Kernel.Controls
       Init();
     }
 
+    public event EventHandler<GenericEventArgs<IFileSystemObject>> NodeMouseClick;
+    public event EventHandler<GenericEventArgs<IFileSystemObject>> NodeMouseDoubleClick;
+
     private void Init()
     {
       ImageList twIcons = new ImageList();
       twIcons.Images.Add("folder", Resources.folder);
       twIcons.Images.Add("file", Resources.file_lua);
       tvFolderView.ImageList = twIcons;
-      Account ac = new Account("http://dummy.no-ip.info/tekkit/", "Dummy", "dummy");
-      HttpPostHelper h = new HttpPostHelper(ac);
-      h.PostCompleteRaw += h_PostCompleteRaw;
-      h.DoRequest(RequestType.GetFiles, "0", "", "");
+
+      tvFolderView.Nodes.Add("KEYLoad", "Bitte warten Daten werden geladen !");
+
+      tvFolderView.NodeMouseClick += new TreeNodeMouseClickEventHandler(tvFolderView_NodeMouseClick);
+      tvFolderView.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(tvFolderView_NodeMouseDoubleClick);
     }
 
-    void h_PostCompleteRaw(object sender, Http.Interface.BaseEvent<string> e)
+    public void LoadData(TecEditFolder folder)
     {
-      DecodeData(e.Result);
-    }
+      tvFolderView.BeginUpdate();
 
-    private void DecodeData(string d)
-    {
-     
-      LoadData(d);
-    }
+      TreeNode searchedNode = null;
+      TreeNode newNode = CreateView(folder);
 
-    public void LoadData(object data)
-    {
-      string fPath = @"C:\Temp";
-      TreeNode fowner = CreateTreenode("fo", null, fPath);
-      TreeNode n = CreateView(fowner, fPath);
-      tvFolderView.Nodes.Add(n);
-    }
-
-    private TreeNode CreateView(TreeNode owner, string p)
-    {
-      foreach (string folder in Directory.GetDirectories(p))
+      foreach (TreeNode currentNode in tvFolderView.Nodes)
       {
-        TreeNode n = CreateTreenode("fo", owner, folder);
-        CreateTreenode("fo", n, folder);
-        owner = CreateView(n, folder);
+        if (currentNode.Text == newNode.Text)
+        {
+          searchedNode = currentNode;
+          break;
+        }
       }
 
-      foreach (string file in Directory.GetFiles(p))
-      {
-        TreeNode fi = CreateTreenode("fi", owner, file);
-        string fName = Path.GetFileName(file);
-      }
-      return owner;
+      if (tvFolderView.Nodes.ContainsKey("KEYLoad"))
+        tvFolderView.Nodes.RemoveByKey("KEYLoad");
+
+      if (searchedNode != null && tvFolderView.Nodes.Contains(searchedNode))
+        tvFolderView.Nodes.Remove(searchedNode);
+
+      tvFolderView.Nodes.Add(newNode);
+      tvFolderView.Sort();
+      tvFolderView.ExpandAll();
+
+      tvFolderView.EndUpdate();
     }
 
-    private TreeNode CreateTreenode(string nodeType, TreeNode root, string data)
+    private void tvFolderView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
     {
-      TreeNode outputNode = null;
+      OnClickRecieved(e.Node, true);
+    }
 
-      if (nodeType == "fo")
-      {
-        outputNode = new TreeNode(Path.GetFileNameWithoutExtension(data), 0, 0);
-        if (root == null)
-          root = outputNode;
-        else
-          root.Nodes.Add(outputNode);
+    private void tvFolderView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+    {
+      OnClickRecieved(e.Node, false);
+    }
 
-        outputNode = root;
-      }
-      else if (nodeType == "fi")
+    private TreeNode CreateView(TecEditFolder folder)
+    {
+      TreeNode rootNode = new TreeNode(folder.Name, 0, 0);
+      CreateTreeView(folder, rootNode);
+      return rootNode;
+    }
+
+    private void CreateTreeView(IFileSystemObject fsObject, TreeNode node)
+    {
+      if (fsObject.FSType == FSObjectType.Folder)
       {
-        //outputNode = new TreeNode(Path.GetFileNameWithoutExtension(data), 0, 0);
-        if (root != null)
-          root.Nodes.Add(new TreeNode(Path.GetFileNameWithoutExtension(data), 1, 1));
-        outputNode = root;
+        foreach (TecEditFolder folder in ((TecEditFolder)fsObject).Folders)
+        {
+          TreeNode folderNode = new TreeNode(folder.Name, 0, 0);
+          folderNode.Tag = folder;
+          node.Nodes.Add(folderNode);
+          CreateTreeView(folder, folderNode);
+        }
+
+        foreach (TecEditFile file in ((TecEditFolder)fsObject).Files)
+        {
+          TreeNode fileNode = new TreeNode(file.Name, 1, 1);
+          fileNode.Tag = file;
+          node.Nodes.Add(fileNode);
+        }
       }
-      return outputNode;
+    }
+
+    protected virtual void OnClickRecieved(TreeNode node, bool isDoubleClick)
+    {
+      if (!isDoubleClick)
+      {
+        if (NodeMouseClick != null)
+          NodeMouseClick(this, new GenericEventArgs<IFileSystemObject>((IFileSystemObject)node.Tag));
+      }
+      else
+      {
+        if (NodeMouseDoubleClick != null)
+          NodeMouseDoubleClick(this, new GenericEventArgs<IFileSystemObject>((IFileSystemObject)node.Tag));
+      }
+    }
+
+    public void UpdateFile(TecEditFile file)
+    {
+      SearchNode(tvFolderView.Nodes, file);
+    }
+
+    private bool SearchNode(TreeNodeCollection nodes, TecEditFile file)
+    {
+      bool dataFound = false;
+
+      foreach (TreeNode n in nodes)
+      {
+        if (n.Nodes.Count > 0)
+          dataFound = SearchNode(n.Nodes, file);
+
+        if (dataFound)
+          break;
+
+        if (n.Text == file.Name)
+        {
+          IFileSystemObject nodeData = (IFileSystemObject)n.Tag;
+          if (nodeData.FSType == FSObjectType.File)
+          {
+            TecEditFile nodeFile = (TecEditFile)nodeData;
+            if (nodeFile.Path == file.Path)
+            {
+              n.Tag = file;
+              dataFound = true;
+              break;
+            }
+          }
+        }        
+      }
+      return dataFound;
     }
   }
 }

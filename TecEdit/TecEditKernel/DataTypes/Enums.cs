@@ -5,9 +5,14 @@ using System.Text;
 
 namespace de.manawyrm.TecEdit.Kernel.DataTypes
 {
-  public enum LoginState
+  public enum ComputerType
   {
-    Denied = 0, Accepted, unknown
+    unknown, ColoredPC, Console, Turtle
+  }
+
+  public enum ServerRequestState
+  {
+    Unknown, Success, Denied
   }
 
   public enum FSObjectType

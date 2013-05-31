@@ -75,11 +75,18 @@
       <DependentUpon>CtlReport.cs</DependentUpon>
     </Compile>
     <Compile Include="DataTypes\Account.cs" />
+    <Compile Include="DataTypes\GenericEventArgs.cs" />
+    <Compile Include="DataTypes\Computer.cs" />
     <Compile Include="DataTypes\Enums.cs" />
     <Compile Include="DataTypes\Interface\IFileSystemObject.cs" />
     <Compile Include="DataTypes\TecEditFile.cs" />
     <Compile Include="DataTypes\TecEditFolder.cs" />
     <Compile Include="ExeptionLogger.cs" />
+    <Compile Include="Http\CommandArgs.cs" />
+    <Compile Include="Http\Interface\IDataBase.cs" />
+    <Compile Include="Http\ResultHelper\GetAllComputerPostResult.cs" />
+    <Compile Include="Http\ResultHelper\GetFileContentPostResult.cs" />
+    <Compile Include="Http\ResultHelper\GetFolderContentPostResult.cs" />
     <Compile Include="Http\ResultHelper\GetUserPostResult.cs" />
     <Compile Include="Http\HttpPostHelper.cs" />
     <Compile Include="Http\Interface\BaseEvent.cs" />

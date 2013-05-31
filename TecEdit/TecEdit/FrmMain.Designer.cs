@@ -102,13 +102,16 @@
       this.vistaMenu1 = new wyDay.Controls.VistaMenu(this.components);
       this.barStatus = new System.Windows.Forms.StatusStrip();
       this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-      this.tsMainContainer = new System.Windows.Forms.ToolStripContainer();
+      this.btnViewFolderBar = new System.Windows.Forms.MenuItem();
+      this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+      this.ctlFileExplorer1 = new de.manawyrm.TecEdit.Kernel.Controls.CtlFileExplorer();
+      this.ctlEditorPane1 = new de.manawyrm.TecEdit.Kernel.Controls.CtlEditorPane();
       this.barSymbol.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.vistaMenu1)).BeginInit();
       this.barStatus.SuspendLayout();
-      this.tsMainContainer.BottomToolStripPanel.SuspendLayout();
-      this.tsMainContainer.TopToolStripPanel.SuspendLayout();
-      this.tsMainContainer.SuspendLayout();
+      this.splitContainer1.Panel1.SuspendLayout();
+      this.splitContainer1.Panel2.SuspendLayout();
+      this.splitContainer1.SuspendLayout();
       this.SuspendLayout();
       // 
       // mmMain
@@ -138,12 +141,14 @@
       // 
       // btnDTNew
       // 
+      this.vistaMenu1.SetImage(this.btnDTNew, global::de.manawyrm.TecEdit.Properties.Resources.page);
       this.btnDTNew.Index = 0;
       this.btnDTNew.Shortcut = System.Windows.Forms.Shortcut.CtrlN;
       this.btnDTNew.Text = "Neue Datei";
       // 
       // btnDTOpenLocal
       // 
+      this.vistaMenu1.SetImage(this.btnDTOpenLocal, global::de.manawyrm.TecEdit.Properties.Resources.folder_page);
       this.btnDTOpenLocal.Index = 1;
       this.btnDTOpenLocal.Text = "Lokale Datei öffnen";
       // 
@@ -160,6 +165,7 @@
       // 
       // btnDTSave
       // 
+      this.vistaMenu1.SetImage(this.btnDTSave, global::de.manawyrm.TecEdit.Properties.Resources.disk);
       this.btnDTSave.Index = 4;
       this.btnDTSave.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
       this.btnDTSave.Text = "Speichern";
@@ -262,7 +268,8 @@
       this.AnsichtMenuItem.Index = 2;
       this.AnsichtMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.btnViewSymbolBar,
-            this.btnViewStateBar});
+            this.btnViewStateBar,
+            this.btnViewFolderBar});
       this.AnsichtMenuItem.Text = "Ansicht";
       // 
       // btnViewSymbolBar
@@ -514,7 +521,6 @@
       // 
       // barSymbol
       // 
-      this.barSymbol.Dock = System.Windows.Forms.DockStyle.None;
       this.barSymbol.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNewFile,
             this.btnOpen,
@@ -526,9 +532,9 @@
             this.toolStripSeparator3,
             this.btnCommentOut,
             this.btnCommentIn});
-      this.barSymbol.Location = new System.Drawing.Point(3, 0);
+      this.barSymbol.Location = new System.Drawing.Point(0, 0);
       this.barSymbol.Name = "barSymbol";
-      this.barSymbol.Size = new System.Drawing.Size(208, 25);
+      this.barSymbol.Size = new System.Drawing.Size(844, 25);
       this.barSymbol.TabIndex = 7;
       this.barSymbol.Text = "ToolStrip";
       // 
@@ -620,12 +626,12 @@
       // 
       // barStatus
       // 
-      this.barStatus.Dock = System.Windows.Forms.DockStyle.None;
       this.barStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-      this.barStatus.Location = new System.Drawing.Point(0, 0);
+      this.barStatus.Location = new System.Drawing.Point(0, 494);
       this.barStatus.Name = "barStatus";
-      this.barStatus.Size = new System.Drawing.Size(852, 22);
+      this.barStatus.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
+      this.barStatus.Size = new System.Drawing.Size(844, 22);
       this.barStatus.TabIndex = 8;
       this.barStatus.Text = "statusStrip1";
       // 
@@ -635,33 +641,58 @@
       this.lblStatus.Size = new System.Drawing.Size(52, 17);
       this.lblStatus.Text = "lblStatus";
       // 
-      // tsMainContainer
+      // btnViewFolderBar
       // 
+      this.btnViewFolderBar.Checked = true;
+      this.btnViewFolderBar.Index = 2;
+      this.btnViewFolderBar.Text = "Ordnerleiste";
+      this.btnViewFolderBar.Click += new System.EventHandler(this.btnViewFolderBar_Click);
       // 
-      // tsMainContainer.BottomToolStripPanel
+      // splitContainer1
       // 
-      this.tsMainContainer.BottomToolStripPanel.Controls.Add(this.barStatus);
+      this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                  | System.Windows.Forms.AnchorStyles.Left)
+                  | System.Windows.Forms.AnchorStyles.Right)));
+      this.splitContainer1.IsSplitterFixed = true;
+      this.splitContainer1.Location = new System.Drawing.Point(12, 28);
+      this.splitContainer1.Name = "splitContainer1";
       // 
-      // tsMainContainer.ContentPanel
+      // splitContainer1.Panel1
       // 
-      this.tsMainContainer.ContentPanel.Size = new System.Drawing.Size(852, 288);
-      this.tsMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.tsMainContainer.Location = new System.Drawing.Point(0, 0);
-      this.tsMainContainer.Name = "tsMainContainer";
-      this.tsMainContainer.Size = new System.Drawing.Size(852, 335);
-      this.tsMainContainer.TabIndex = 9;
-      this.tsMainContainer.Text = "toolStripContainer1";
+      this.splitContainer1.Panel1.Controls.Add(this.ctlFileExplorer1);
       // 
-      // tsMainContainer.TopToolStripPanel
+      // splitContainer1.Panel2
       // 
-      this.tsMainContainer.TopToolStripPanel.Controls.Add(this.barSymbol);
+      this.splitContainer1.Panel2.Controls.Add(this.ctlEditorPane1);
+      this.splitContainer1.Size = new System.Drawing.Size(820, 463);
+      this.splitContainer1.SplitterDistance = 223;
+      this.splitContainer1.SplitterWidth = 10;
+      this.splitContainer1.TabIndex = 11;
+      // 
+      // ctlFileExplorer1
+      // 
+      this.ctlFileExplorer1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.ctlFileExplorer1.Location = new System.Drawing.Point(0, 0);
+      this.ctlFileExplorer1.Name = "ctlFileExplorer1";
+      this.ctlFileExplorer1.Size = new System.Drawing.Size(223, 463);
+      this.ctlFileExplorer1.TabIndex = 9;
+      // 
+      // ctlEditorPane1
+      // 
+      this.ctlEditorPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.ctlEditorPane1.Location = new System.Drawing.Point(0, 0);
+      this.ctlEditorPane1.Name = "ctlEditorPane1";
+      this.ctlEditorPane1.Size = new System.Drawing.Size(587, 463);
+      this.ctlEditorPane1.TabIndex = 10;
       // 
       // FrmMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(852, 335);
-      this.Controls.Add(this.tsMainContainer);
+      this.ClientSize = new System.Drawing.Size(844, 516);
+      this.Controls.Add(this.splitContainer1);
+      this.Controls.Add(this.barStatus);
+      this.Controls.Add(this.barSymbol);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Menu = this.mmMain;
       this.Name = "FrmMain";
@@ -672,13 +703,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.vistaMenu1)).EndInit();
       this.barStatus.ResumeLayout(false);
       this.barStatus.PerformLayout();
-      this.tsMainContainer.BottomToolStripPanel.ResumeLayout(false);
-      this.tsMainContainer.BottomToolStripPanel.PerformLayout();
-      this.tsMainContainer.TopToolStripPanel.ResumeLayout(false);
-      this.tsMainContainer.TopToolStripPanel.PerformLayout();
-      this.tsMainContainer.ResumeLayout(false);
-      this.tsMainContainer.PerformLayout();
+      this.splitContainer1.Panel1.ResumeLayout(false);
+      this.splitContainer1.Panel2.ResumeLayout(false);
+      this.splitContainer1.ResumeLayout(false);
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -756,8 +785,9 @@
     private wyDay.Controls.VistaMenu vistaMenu1;
     private System.Windows.Forms.StatusStrip barStatus;
     private System.Windows.Forms.ToolStripStatusLabel lblStatus;
-    private System.Windows.Forms.ToolStripContainer tsMainContainer;
-
-
+    private System.Windows.Forms.MenuItem btnViewFolderBar;
+    private Kernel.Controls.CtlEditorPane ctlEditorPane1;
+    private Kernel.Controls.CtlFileExplorer ctlFileExplorer1;
+    private System.Windows.Forms.SplitContainer splitContainer1;
   }
 }

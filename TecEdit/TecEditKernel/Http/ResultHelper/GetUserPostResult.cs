@@ -11,15 +11,10 @@ namespace de.manawyrm.TecEdit.Kernel.Http.ResultHelper
   {
     private List<Account> mResult;
 
-    public GetUserPostResult(string httpPostResult, string errorMessage, string postRequest)
-      : base(errorMessage, postRequest)
+    public GetUserPostResult(PostEventArgs e)
+      : base(e)
     {
-      DecodeResult(httpPostResult);
-    }
-
-    public override string Name
-    {
-      get { return RequestType.GetAllUserPC.ToString(); }
+      DecodeResult(e.PostResult);
     }
 
     public override List<Account> Result
@@ -30,10 +25,18 @@ namespace de.manawyrm.TecEdit.Kernel.Http.ResultHelper
     private void DecodeResult(string httpPostResult)
     {
       mResult = new List<Account>();
-      foreach (string user in httpPostResult.Split('\n'))
+      if (ServerStatus == ServerRequestState.Success)
       {
-        if(!string.IsNullOrEmpty(user))
-          mResult.Add(new Account(Settings.AppSettings.Account.HostURL, user, ""));
+        foreach (string userString in httpPostResult.Split('\n'))
+        {
+          string[] uData = userString.Split('|');
+          int uID;
+
+          bool validID = int.TryParse(uData[0], out uID);
+
+          if (validID && !string.IsNullOrEmpty(uData[1]))
+            mResult.Add(new Account(Settings.AppSettings.Account.HostURL, uData[1], uID));
+        }
       }
     }
   }

@@ -14,20 +14,39 @@ namespace de.manawyrm.TecEdit.Kernel
     #endregion
 
     #region phpTargetFileDefinitions
-    public const string php_Login = "login.php";
-    public const string php_SetPCDescription = "setdesc.php";
-    public const string php_GetAllUserPC = "getuser.php";
+    public const string php_Login = "checkLogin.php";
+    public const string php_setPCDescription = "setPCDescription.php";//
+    public const string php_GetUsersFromComputer = "getUsersFromComputer.php";
     public const string php_RemovePCUser = "deregister.php";
-    public const string php_GetAllComputer = "getcomputer.php";
+    public const string php_GetComputersFromUser = "getComputersFromUser.php";
     public const string php_ReportBug = "reportbug.php";
-    public const string php_GetFiles = "getfiles.php";
-    public const string php_SetContent = "setcontent.php";
+    public const string php_getFolderContent = "getFolderContent.php";//
+    public const string php_setFileContent = "setFileContent.php";//
     public const string php_RegisterUserToPC = "register_sec.php";
-    public const string php_GetContent = "getcontent.php";
+    public const string php_getFileContent = "getFileContent.php";//
     #endregion
 
     #region ErrorCodes
     public const string EC_UserNotFound = "User nicht gesetzt in Config";
+    #endregion
+
+    #region FilterTypes
+    private static List<string> mExtFilters;
+    public static List<string> ExtFilters
+    {
+      get
+      {
+        if (mExtFilters == null)
+        {
+          mExtFilters = new List<string>(){
+            {".txt"},
+            {""},
+            {".lua"},
+          };
+        }
+        return mExtFilters;
+      }
+    }
     #endregion
 
     #region Api

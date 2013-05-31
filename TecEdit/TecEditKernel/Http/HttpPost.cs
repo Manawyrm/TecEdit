@@ -19,6 +19,8 @@ namespace de.manawyrm.TecEdit.Kernel.Http
     }
   
     private string mPostUri;
+    private string mPostParams;
+    private RequestType mType;
     private string mRequestID;
     private BackgroundWorker mRequestHandler;
 
@@ -33,14 +35,25 @@ namespace de.manawyrm.TecEdit.Kernel.Http
       get { return mPostUri; }
     }
 
-    public bool Post(string eventName, PostParamCollection postParamCollection)
+    public string PostParams
+    {
+      get { return mPostParams; }
+    }
+
+    public bool Post(RequestType requestType, string eventName, PostParamCollection postParamCollection)
     {
       if (!mRequestHandler.IsBusy)
       {
-        mRequestHandler.RunWorkerAsync(postParamCollection);
         mRequestID = eventName;
+        mType = requestType;
+        mRequestHandler.RunWorkerAsync(postParamCollection);       
       }
       return !mRequestHandler.IsBusy;
+    }
+
+    public bool Post(RequestType requestType, PostParamCollection postParamCollection)
+    {
+      return Post(requestType, requestType.ToString(), postParamCollection);
     }
 
     private void Init()
@@ -58,7 +71,12 @@ namespace de.manawyrm.TecEdit.Kernel.Http
 
     private void Raise(string message, string errorCode)
     {
-      mRequestHandler.ReportProgress(0, new PostEventArgs(mRequestID, message, errorCode));      
+      if (message.StartsWith("E:"))
+        mRequestHandler.ReportProgress(0, new PostEventArgs(mType, mRequestID, "2", message.Replace("E:", ""), PostUri + PostParams));
+      else if (message.Contains("Warning") || message.Contains(mType.ToString()))
+        mRequestHandler.ReportProgress(0, new PostEventArgs(mType, mRequestID, "2", message, PostUri + PostParams));
+      else
+        mRequestHandler.ReportProgress(0, new PostEventArgs(mType, mRequestID, message, errorCode, PostUri + PostParams));
     }
 
     void mRequestHandler_DoWork(object sender, DoWorkEventArgs e)
@@ -79,6 +97,8 @@ namespace de.manawyrm.TecEdit.Kernel.Http
         {
           parameterString += parameter.Paramter + "=" + parameter.Value + "&";
         }
+        parameterString = parameterString.Remove(parameterString.Length - 1, 1);
+        mPostParams = "?" + parameterString;
 
         byte[] byteArray = Encoding.UTF8.GetBytes(parameterString);
         webRequest.ContentLength = byteArray.Length;
@@ -116,6 +136,8 @@ namespace de.manawyrm.TecEdit.Kernel.Http
     private string mMessageResult;
     private string mErrorResult;
     private string mEventName;
+    private string mPostUri;
+    private RequestType mType;
 
     /// <summary>
     /// eventName zum abfragen im EventResult
@@ -125,16 +147,28 @@ namespace de.manawyrm.TecEdit.Kernel.Http
     /// <param name="eventName"></param>
     /// <param name="message"></param>
     /// <param name="errorResult"></param>
-    public PostEventArgs(string eventName, string message, string errorResult)
+    public PostEventArgs(RequestType type, string eventName, string message, string errorResult, string postURI)
     {
       mMessageResult = message;
       mErrorResult = errorResult;
       mEventName = eventName;
+      mPostUri = postURI;
+      mType = type;
     }
 
     public string ErrorMessage
     {
       get { return mErrorResult; }
+    }
+
+    public string PostRequest
+    {
+      get { return mPostUri; }
+    }
+
+    public RequestType RequestType
+    {
+      get { return mType; }
     }
 
     public string Name
@@ -155,6 +189,9 @@ namespace de.manawyrm.TecEdit.Kernel.Http
 
   public class PostParameters
   {
+    public PostParameters()
+    { }
+
     public PostParameters(string paramter, string value)
     {
       Paramter = paramter;

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using de.manawyrm.TecEdit.Kernel.DataTypes;
 
 namespace de.manawyrm.TecEdit.Kernel
 {
@@ -36,7 +37,10 @@ namespace de.manawyrm.TecEdit.Kernel
 
     public static long CalculateFileSize(string fContent)
     {
-      return new ASCIIEncoding().GetBytes(fContent).Length;
+      if (!string.IsNullOrEmpty(fContent))
+        return new ASCIIEncoding().GetBytes(fContent).Length;
+      else
+        return 0;
     }
 
     public static string BytesToFormattedString(long bytes)
@@ -55,6 +59,28 @@ namespace de.manawyrm.TecEdit.Kernel
         i++;
       }
       return string.Format(format[i], s);
+    }
+
+    static public string EncodeToB64(string toEncode)
+    {
+      byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.Default.GetBytes(toEncode);
+      return System.Convert.ToBase64String(toEncodeAsBytes);
+    }
+
+    static public string EncodeToB64(string toEncode, bool submitOverPHP)
+    {
+      string b64Data = EncodeToB64(toEncode);
+
+      if (submitOverPHP)
+        b64Data = b64Data.Replace('+', '|');
+
+      return b64Data;
+    }
+
+    static public string DecodeFrom64(string encodedData)
+    {
+      byte[] encodedDataAsBytes = System.Convert.FromBase64String(encodedData);
+      return System.Text.ASCIIEncoding.Default.GetString(encodedDataAsBytes);
     }
   }
 }

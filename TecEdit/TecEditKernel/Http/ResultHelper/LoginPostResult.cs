@@ -7,32 +7,24 @@ using System.Text;
 
 namespace de.manawyrm.TecEdit.Kernel.Http.ResultHelper
 {
-  public class LoginPostResult : BaseEvent<LoginState>
+  public class LoginPostResult : BaseEvent<ServerRequestState>
   {
-    private LoginState mResult;
+    private ServerRequestState mResult;
 
-    public LoginPostResult(string httpPostResult, string errorMessage, string postRequest)
-      : base(errorMessage, postRequest)
+    public LoginPostResult(PostEventArgs e)
+      : base(e)
     {
-      DecodeResult(httpPostResult);
+      DecodeResult(e.PostResult);
     }
 
-    public override string Name
-    {
-      get { return RequestType.Login.ToString(); }
-    }
-
-    public override LoginState Result
+    public override ServerRequestState Result
     {
       get { return mResult; }
     }
 
     private void DecodeResult(string httpPostResult)
     {
-      if (!string.IsNullOrEmpty(httpPostResult))
-        mResult = (LoginState)Enum.Parse(typeof(LoginState), httpPostResult);
-      else
-        mResult = LoginState.unknown;
+      mResult = ServerStatus;
     }
   }
 }

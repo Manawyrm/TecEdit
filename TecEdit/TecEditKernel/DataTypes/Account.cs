@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using de.manawyrm.TecEdit.Kernel.Http.Interface;
 
 namespace de.manawyrm.TecEdit.Kernel.DataTypes
 {
-  public class Account
+  public class Account : IDatabase
   {
+    private int mDBI;
     private string mUsername;
     private string mPasswort;
     private string mHostURL;
@@ -19,6 +21,13 @@ namespace de.manawyrm.TecEdit.Kernel.DataTypes
     {
       mUsername = username;
       mPasswort = passwort;
+      mHostURL = url;
+    }
+
+    public Account(string url, string username, int dbID)
+    {
+      mUsername = username;
+      mDBI = dbID;
       mHostURL = url;
     }
 
@@ -82,6 +91,11 @@ namespace de.manawyrm.TecEdit.Kernel.DataTypes
       mUsername = account.Username;
       mPasswort = account.Passwort;
       mHostURL = account.HostURL;
+    }
+
+    public int DBID
+    {
+      get { return mDBI; }
     }
   }
 }

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ScintillaNET;
 using de.manawyrm.TecEdit.Kernel.Properties;
 using de.manawyrm.TecEdit.Kernel.DataTypes;
+using de.manawyrm.TecEdit.Kernel.ScintillaUtils;
 
 namespace de.manawyrm.TecEdit.Kernel.Controls
 {
@@ -17,6 +18,7 @@ namespace de.manawyrm.TecEdit.Kernel.Controls
     public CtlEditorPane()
     {
       InitializeComponent();
+      Init();
     }
 
     public void OpenFile(TecEditFile file)
@@ -24,7 +26,22 @@ namespace de.manawyrm.TecEdit.Kernel.Controls
       CreateOpenFileTab(file);
     }
 
+    private void Init()
+    {
+      
+    }
+
     private void CreateOpenFileTab(TecEditFile file)
+    {
+      TabPage page = GetTabpage(file);
+
+      if (!tCEditor.TabPages.Contains(page))
+        tCEditor.TabPages.Add(page);
+
+      tCEditor.SelectedTab = page;
+    }
+
+    private TabPage GetTabpage(TecEditFile file)
     {
       string fileName = "Neues Script";
 
@@ -32,17 +49,30 @@ namespace de.manawyrm.TecEdit.Kernel.Controls
         fileName = file.Name;
 
       TabPage tabPage = new TabPage(fileName);
+      tabPage.Tag = file;
+
+      foreach (TabPage currentPage in tCEditor.TabPages)
+      {
+        if (currentPage.Text == tabPage.Text)
+        {
+          TecEditFile tabFile = (TecEditFile)currentPage.Tag;
+          if (tabFile.Path == file.Path)
+          {
+            return currentPage;            
+          }
+        }
+      }
 
       Scintilla editorPane = CreateEditorPaneFormat(file.FileContent);
       tabPage.Controls.Add(editorPane);
-      tCEditor.TabPages.Add(tabPage);
+      return tabPage;
     }
 
     private Scintilla CreateEditorPaneFormat(string content)
     {
       Scintilla editorPane = new Scintilla();
-      editorPane.CharAdded += editorPane_CharAdded;
-
+      AutoCompleteHelper autoComplete = new AutoCompleteHelper(editorPane);
+      
       editorPane.Dock = DockStyle.Fill;
 
       //Display Line Numbers
@@ -59,67 +89,6 @@ namespace de.manawyrm.TecEdit.Kernel.Controls
       editorPane.Commands.AddBinding(Keys.X, Keys.Control, BindableCommand.Cut);
       editorPane.Text = content;
       return editorPane;
-    }
-
-    void editorPane_CharAdded(object sender, CharAddedEventArgs e)
-    {
-      Scintilla editor = sender as ScintillaNET.Scintilla;
-
-      if (e.Ch == '.')
-      {
-        Timer t = new Timer();
-
-        t.Interval = 10;
-        t.Tag = editor;
-        t.Tick += new EventHandler((obj, ev) =>
-        {
-          // make a new autocomplete list if needed
-          List<string> s = new List<string>();
-          s.Add("test");
-          s.Add("test2");
-          //s.Add("test3xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-          s.Sort(); // don't forget to sort it
-
-          editor.AutoComplete.ShowUserList(0, s);
-          ToolTip tt = new ToolTip();
-
-          int cLine = editor.AutoComplete.LastStartPosition + 1;
-          int cPos = editor.CurrentPos;
-
-          int overAllPosition = editor.Caret.Position;
-          int lineStartPosition = editor.Lines.Current.StartPosition;
-          int yourAnswer = overAllPosition - lineStartPosition;
-
-          int x = editor.PointXFromPosition(yourAnswer);
-          int y = editor.PointYFromPosition(overAllPosition);
-
-          x += 150;
-          y += 40;
-
-          if (editor.AutoComplete.IsActive)
-          {
-          }
-
-
-          tt.Show("Test1234", this, x, y, 5000);
-
-          t.Stop();
-          t.Enabled = false;
-          t.Dispose();
-        });
-        t.Start();
-      }
-    }
-
-    private int TryGetlength(Scintilla s, List<string> d)
-    {
-      int l = 0;
-      foreach (string ac in d)
-      {
-        if (ac.Length > l)
-          l = ac.Length;
-      }
-      return l;
     }
 
     private ContextMenuStrip CreateContextMenu()

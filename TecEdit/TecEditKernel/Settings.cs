@@ -44,6 +44,7 @@ namespace de.manawyrm.TecEdit.Kernel
           XmlSerializer seria = new XmlSerializer(typeof(SettingsFile));
           using (StreamWriter fs = new StreamWriter(Utility.SettingsFilePath))
             seria.Serialize(fs, mSettings);
+          
         }
         catch (Exception ex)
         {
@@ -103,6 +104,13 @@ namespace de.manawyrm.TecEdit.Kernel
     {
       get { return mShowStatusbar; }
       set { mShowStatusbar = value; }
+    }
+
+    private bool mShowFolderbar;
+    public bool ShowFolderbar
+    {
+      get { return mShowFolderbar; }
+      set { mShowFolderbar = value; }
     }
 
     private Account mAccount;

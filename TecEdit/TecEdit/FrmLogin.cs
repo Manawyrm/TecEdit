@@ -55,17 +55,17 @@ namespace de.manawyrm.TecEdit
       {
         Account ac = ctlLogin1.GetAccount();
         RegisterEvent(ac);
-        mLoginTester.DoRequest(RequestType.Login, "", "", "");
+        mLoginTester.DoRequest(RequestType.CheckLogin, "", "", "");
       }
     }
 
-    void mLoginTester_PostCompleteLogin(object sender, BaseEvent<LoginState> e)
+    void mLoginTester_PostCompleteLogin(object sender, BaseEvent<ServerRequestState> e)
     {
       try
       {
-        if (e.Result == LoginState.Accepted)
+        if (e.Result == ServerRequestState.Success)
           Start();
-        else if (e.Result == LoginState.Denied)
+        else if (e.Result == ServerRequestState.Denied)
           MessageBox.Show("Falsche login daten");
       }
       catch (Exception ex)
@@ -111,6 +111,13 @@ namespace de.manawyrm.TecEdit
 
       if (closeApp)
         Utility.CloseApplication();
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      FrmMain frmMain = new FrmMain();
+      frmMain.SetLoginState(true);
+      DialogResult dr = frmMain.ShowDialog();
     }
   }
 }

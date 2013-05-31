@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 
 using de.manawyrm.TecEdit.Kernel;
+using de.manawyrm.TecEdit.Kernel.DataTypes.Interface;
+using de.manawyrm.TecEdit.Kernel.DataTypes;
 
 namespace de.manawyrm.TecEdit
 {
@@ -21,6 +23,9 @@ namespace de.manawyrm.TecEdit
 
     private void Init()
     {
+      //Init Events
+      ctlFileExplorer1.NodeMouseDoubleClick += new EventHandler<GenericEventArgs<IFileSystemObject>>(ctlFileExplorer1_NodeMouseDoubleClick);
+
       //Load Settings
       btnViewSymbolBar.Checked = Settings.AppSettings.ShowSymbolBar;
       barSymbol.Visible = Settings.AppSettings.ShowSymbolBar;
@@ -31,6 +36,16 @@ namespace de.manawyrm.TecEdit
 
       //Set Status
       lblStatus.Text = string.Format("{0} angemeldet ...", Settings.AppSettings.Account.Username);
+    }    
+
+    public void SetLoginState(bool isOfflineMode)
+    {
+      if (isOfflineMode)
+      {
+        lblStatus.Text = string.Format("Offline: {0} angemeldet ...", Settings.AppSettings.Account.Username);
+        TecEdit.Kernel.DataTypes.TecEditFolder f = new Kernel.DataTypes.TecEditFolder(@"C:\Server", true);
+        ctlFileExplorer1.LoadData(f);
+      }
     }
 
     private void btnDTLogut_Click(object sender, EventArgs e)
@@ -49,12 +64,12 @@ namespace de.manawyrm.TecEdit
       foreach (string apiName in Constants.Apis.Keys)
       {
         MenuItem newitem = new MenuItem(apiName);
-        newitem.Click += ApiMenuItem_Click;
+        newitem.Click += apiMenuItem_Click;
         APIMenuItem.MenuItems.Add(newitem);
       }
     }
 
-    void ApiMenuItem_Click(object sender, EventArgs e)
+    void apiMenuItem_Click(object sender, EventArgs e)
     {
       MenuItem i = sender as MenuItem;
       if (i != null)
@@ -73,6 +88,23 @@ namespace de.manawyrm.TecEdit
       btnViewStateBar.Checked = !btnViewStateBar.Checked;
       barStatus.Visible = btnViewStateBar.Checked;
       Settings.AppSettings.ShowStatusbar = barStatus.Visible;
+    }
+
+    private void btnViewFolderBar_Click(object sender, EventArgs e)
+    {
+      btnViewFolderBar.Checked = !btnViewFolderBar.Checked;
+      splitContainer1.Panel1Collapsed = !btnViewFolderBar.Checked;
+      Settings.AppSettings.ShowFolderbar = !splitContainer1.Panel1Collapsed;
+    }
+
+    void ctlFileExplorer1_NodeMouseDoubleClick(object sender, GenericEventArgs<IFileSystemObject> e)
+    {
+      if (e.Result.FSType == FSObjectType.File)
+      {
+        TecEditFile f = (TecEditFile)e.Result;
+        f.LoadContent();
+        ctlEditorPane1.OpenFile(f);
+      }
     }
   }
 }
